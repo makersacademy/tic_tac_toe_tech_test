@@ -12,11 +12,12 @@ class Board
   end
 
   def display
+    # return when you know format for the grid
     print 'x'
   end
 
   def fill_cell_at(row, cell_num, current_player)
-    grid[row][cell_num] = current_player.token
+    grid[row.to_sym][cell_num.to_sym].push(current_player.token)
   end
 
 

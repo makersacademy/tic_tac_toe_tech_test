@@ -10,7 +10,11 @@ class Rules
   end
 
   def valid_cell?(user_input)
-    valid_cells.include?(user_input)
+    fail "That's not a valid cell" unless valid_cells.include?(user_input)
+  end
+
+  def all_cell_pick_checks(user_input)
+    valid_cell?(user_input)
   end
 
 end

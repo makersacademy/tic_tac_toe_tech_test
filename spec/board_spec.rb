@@ -26,7 +26,7 @@ describe Board do
 
     it "will insert the player's token into the specified cell" do
       board.fill_cell_at(row, cell_num, current_player)
-      expect(board.grid[row][cell_num]).to eq(current_player.token)
+      expect(board.grid[row][cell_num]).to eq([current_player.token])
     end
 
   end
