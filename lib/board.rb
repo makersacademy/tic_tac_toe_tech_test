@@ -16,8 +16,8 @@ class Board
     print 'x'
   end
 
-  def fill_cell_at(row, cell_num, current_player)
-    grid[row.to_sym][cell_num.to_sym].push(current_player.token)
+  def fill_cell_at(position, current_player)
+    grid[position[:row].to_sym][position[:cell_num].to_sym].push(current_player.token)
   end
 
 

@@ -10,7 +10,6 @@ class Player
   end
 
   def pick_cell
-    puts "input please"
     gets.chomp
   end
 

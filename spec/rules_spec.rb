@@ -26,9 +26,6 @@ describe Rules do
 
   end
 
-  describe "#all_cell_pick_checks" do
-
-  end
 
 
 

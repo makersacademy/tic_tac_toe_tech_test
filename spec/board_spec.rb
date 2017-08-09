@@ -20,13 +20,12 @@ describe Board do
 
   describe "#fill_cell_at" do
 
-    let(:row) { :top }
-    let(:cell_num) { :one }
+    let(:position) { {row: "top", cell_num: "one" } }
     let(:current_player) { double("PlayerOne", token: 'X') }
 
     it "will insert the player's token into the specified cell" do
-      board.fill_cell_at(row, cell_num, current_player)
-      expect(board.grid[row][cell_num]).to eq([current_player.token])
+      board.fill_cell_at(position, current_player)
+      expect(board.grid[:top][:one]).to eq([current_player.token])
     end
 
   end
