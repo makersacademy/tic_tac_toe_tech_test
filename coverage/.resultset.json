@@ -57,8 +57,20 @@
         null,
         null,
         null
+      ],
+      "/Users/Simon/Projects/tech-tests/tic_tac_toe_tech_test/spec/game_spec.rb": [
+        1,
+        null,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1502365900
+    "timestamp": 1502374054
   }
 }

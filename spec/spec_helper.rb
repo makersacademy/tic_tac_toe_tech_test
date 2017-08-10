@@ -15,6 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'cell.rb'
 require 'board.rb'
+require 'game.rb'
 require 'simplecov'
 require 'simplecov-console'
 
