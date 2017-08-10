@@ -1,5 +1,13 @@
 # Tic-Tac-Toe tech test
 
+**User stories**
+```
+As a player
+So that I can see the unclaimed positions
+I want to print out the grid of cells
+
+
+
 ## Requirements
 
 * Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
