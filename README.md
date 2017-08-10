@@ -1,5 +1,28 @@
 # Tic-Tac-Toe tech test
 
+## User Stories
+```
+As a user.
+So that I can relax after a long day of work.
+I want to be able to play a game of Tic-Tac-Toe with my friend.
+
+As a user.
+So that I can win a game of Tic-Tac-Toe.
+I want to be able to make my choice by typing a command into the terminal.
+
+As a user.
+So that I can see the move I have played.
+I want to be able to see the board after each move.
+
+As a user.
+So that I can play a game of Tic-Tac-Toe with my friend.
+I want to be able to take turns.
+
+As a user.
+So that I know if I have won a game of Tic-Tac-Toe.
+I want to be able to see the winner announced when the game is over.
+```
+
 ## Requirements
 
 * Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
