@@ -5,12 +5,15 @@ require_relative 'rules'
 require_relative 'parser'
 
 class Game
-  attr_reader :board, :player, :rules, :parser
+  attr_reader :board, :player_one, :player_two, :rules, :parser
+  attr_accessor :current_player
 
-  def initialize(player = Player.new('X'), board = Board.new, rules = Rules.new)
+  def initialize(player = Player, board = Board.new, rules = Rules.new)
     @board = board
     @rules = rules
-    @player = player
+    @player_one = player.create_one
+    @player_two = player.create_two
+    @current_player = player_one
     @parser = Parser.new
   end
 
@@ -20,12 +23,16 @@ class Game
     end
   end
 
+  def switch_player
+    current_player == player_one ? current_player=(player_two) : current_player=(player_one)
+  end
+
   private
 
   def get_move
-    index = parser.map_cell_to_index(player.pick_cell)
+    index = parser.map_cell_to_index(current_player.pick_cell)
     rules.check_valid_move(index, board)
-    board.fill_cell_at(index, player)
+    board.fill_cell_at(index, current_player)
   end
 
   def game_over?
@@ -35,6 +42,6 @@ class Game
 
   def one_whole_turn
     get_move
-    game_over?
+    exit if game_over?
   end
 end
