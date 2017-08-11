@@ -21,4 +21,29 @@ describe Game do
       expect(game.current_player).to eq(player1)
     end
   end
+
+  describe '#make_move' do
+    it 'allows a player to make a move' do
+      allow(player1).to receive(:choose_space).with(1, 1)
+      allow(board).to receive(:print)
+      game.make_move(1, 1)
+      expect(game.board.grid[1][1]).to eq(:x)
+    end
+
+    it 'switches the current player after a move' do
+      allow(player1).to receive(:choose_space).with(1, 1)
+      allow(board).to receive(:print)
+      game.make_move(1, 1)
+      expect(game.current_player).to eq(player2)
+    end
+
+    it 'allows players to take alternate turns' do
+      allow(player1).to receive(:choose_space).with(1, 1)
+      allow(player2).to receive(:choose_space).with(2, 2)
+      allow(board).to receive(:print)
+      game.make_move(1, 1)
+      game.make_move(2, 2)
+      expect(game.board.grid[2][2]).to eq(:o)
+    end
+  end
 end

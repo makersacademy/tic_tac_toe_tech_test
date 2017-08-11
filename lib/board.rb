@@ -5,15 +5,17 @@ class Board
     @grid = create
   end
 
-  def create
-    [[true, true, true],
-    [true, true, true],
-    [true, true, true]]
-  end
-
   def print
     puts "#{@grid[0]}"
     puts "#{@grid[1]}"
     puts "#{@grid[2]}"
+  end
+
+  private
+
+  def create
+    [[true, true, true],
+    [true, true, true],
+    [true, true, true]]
   end
 end

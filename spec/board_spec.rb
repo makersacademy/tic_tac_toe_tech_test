@@ -17,7 +17,9 @@ describe Board do
       flattened_grid = subject.grid.flatten
       expect(flattened_grid.all? { |x| x == flattened_grid[0] })
     end
+  end
 
+  describe '#print' do
     it 'can print the board for the players' do
       expect { subject.print }.to output("[true, true, true]\n[true, true, true]\n[true, true, true]\n").to_stdout
     end

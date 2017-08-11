@@ -11,4 +11,16 @@ class Game
     @current_player = @player1
   end
 
+  def make_move(row, column)
+    @board.grid[row][column] = @current_player.symbol
+    switch_current_player
+    @board.print
+  end
+
+  private
+
+  def switch_current_player
+    @current_player == @player1 ? @current_player = @player2 : @current_player = @player2
+  end
+
 end
