@@ -11,6 +11,7 @@ class PlayerO
   end
 
   def move(a,b)
+    raise 'This position is already taken' unless @board.grid[a][b] == '-'
     @board.grid[a][b] = "O"
   end
 end
