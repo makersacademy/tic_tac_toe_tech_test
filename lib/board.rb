@@ -2,8 +2,8 @@ class Board
   attr_reader :grid
 
   SPACES = 9
-  ROWS = [[0, 1, 2], [3, 4, 5], [2, 5, 8]]
-  COLUMNS = [[0, 3, 6], [3, 4, 5], [6, 7, 8]]
+  ROWS = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+  COLUMNS = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
   DIAGONALS = [[0, 4, 8], [2, 4, 6]]
 
   def initialize
