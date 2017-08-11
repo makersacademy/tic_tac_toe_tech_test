@@ -48,11 +48,6 @@ describe Board do
       it "plays a square on the board as either 'X' or 'O' and shows the board" do
         expect { board1.play_square(5) }.to output("[1, 2, 3]\n[4, \"X\", 6]\n[7, 8, 9]\n").to_stdout
       end
-
-      it "plays 'X' and 'O' and shows the board" do
-        board1.play_square(5)
-        board1.play
-      end
     end
 
     describe '#check_turn' do
