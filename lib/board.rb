@@ -1,19 +1,20 @@
+# lib/board.rb
 class Board
   attr_reader :grid
 
   def initialize
-    @grid = [["","",""],
-             ["","",""],
-             ["","",""]]
+    @grid = [['?', '?', '?'],
+             ['?', '?', '?'],
+             ['?', '?', '?']]
   end
 
-  def createGrid(grid)
-    @grid
-  end
-
-  def printGrid(grid)
+  def print_grid
     @grid.each do |row|
-      puts row.join(" ")
+      puts row.join(' ')
     end
+  end
+
+  def get_cell(x, y)
+    grid[y][x]
   end
 end
