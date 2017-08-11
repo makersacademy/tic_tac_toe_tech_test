@@ -14,7 +14,7 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-11T09:42:39+01:00">2017-08-11T09:42:39+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-11T10:16:59+01:00">2017-08-11T10:16:59+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.51
+         1.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>35</b> relevant lines. 
-    <span class="green"><b>35</b> lines covered</span> and
+    <b>6</b> files in total.
+    <b>57</b> relevant lines. 
+    <span class="green"><b>57</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,7 +63,17 @@
       <tr>
         <td class="strong"><a href="#d80652ac53e730f01e49b5e7e449f7013580eca4" class="src_link" title="lib/game.rb">lib/game.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
+        <td>16</td>
+        <td>9</td>
+        <td>9</td>
+        <td>0</td>
+        <td>1.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#184670f365f2695bd14b6c03af3c136e011401d6" class="src_link" title="lib/player.rb">lib/player.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>9</td>
         <td>4</td>
         <td>4</td>
         <td>0</td>
@@ -83,11 +93,21 @@
       <tr>
         <td class="strong"><a href="#ae272ed74e9d60fe8ffce2c0bce0eeab6d0b1c22" class="src_link" title="spec/game_spec.rb">spec/game_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>7</td>
-        <td>7</td>
+        <td>24</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#7f49f605f28377c0c324842bb01e72b7f3b9617e" class="src_link" title="spec/player_spec.rb">spec/player_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>12</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.2</td>
       </tr>
       
     </tbody>
@@ -244,6 +264,121 @@
     <h3>lib/game.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;board&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;player&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Game</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :board, :player1, :player2, :current_player</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(board = Board.new, player1 = Player.new(:x), player2 = Player.new(:o) )</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @board = board</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @player1 = player1</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @player2 = player2</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @current_player = @player1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="184670f365f2695bd14b6c03af3c136e011401d6">
+  <div class="header">
+    <h3>lib/player.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
       <b>4</b> relevant lines. 
       <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
@@ -256,19 +391,19 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Game</code>
+          <code class="ruby">class Player</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_reader :board</code>
+          <code class="ruby">  attr_reader :symbol</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -280,13 +415,13 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(board = Board.new)</code>
+          <code class="ruby">  def initialize(symbol)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    @board = board</code>
+          <code class="ruby">    @symbol = symbol</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -296,6 +431,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -480,8 +621,8 @@
     <h3>spec/game_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -513,55 +654,212 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
           <code class="ruby">  let(:board) { double(grid: [[true, true, true], [true, true, true], [true, true, true]]) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="6">
+          <span class="hits">4</span>
           
-          <code class="ruby">  let(:game) { described_class.new(board) }</code>
+          <code class="ruby">  let(:player1) { double(symbol: :x) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
+          
+          <code class="ruby">  let(:player2) { double(symbol: :o) }</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
+          
+          <code class="ruby">  let(:game) { described_class.new(board, player1, player2) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#initialize&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;initializes with a board&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.board).to_not eq(nil)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;initializes with players&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(game.player1).to eq(player1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(game.player2).to eq(player2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;player1 starts as the current player&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(game.current_player).to eq(player1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="7f49f605f28377c0c324842bb01e72b7f3b9617e">
+  <div class="header">
+    <h3>spec/player_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;player&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Player do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  let(:player1) { described_class.new(:x) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#initialize&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;initializes with a symbol&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(player1.symbol).to eq(:x)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
