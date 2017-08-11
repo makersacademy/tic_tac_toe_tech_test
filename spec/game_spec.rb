@@ -46,7 +46,7 @@ describe Game do
       expect(game.board.grid[2][2]).to eq(:o)
     end
 
-    it 'only allows a player to pick a free space' do
+    it 'allows a player to pick a free space' do
       game.make_move(1, 1)
       allow(player2).to receive(:choose_space).with(1, 1)
       allow(board).to receive(:space_is_free?).with(1, 1).and_return(false)

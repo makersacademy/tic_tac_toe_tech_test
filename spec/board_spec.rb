@@ -21,7 +21,7 @@ describe Board do
 
   describe '#print' do
     it 'can print the board for the players' do
-      expect { subject.print }.to output("[true, true, true]\n[true, true, true]\n[true, true, true]\n").to_stdout
+      expect { subject.print }.to output("|-|-|-|\n|-|-|-|\n|-|-|-|\n").to_stdout
     end
   end
 
