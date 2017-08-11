@@ -24,4 +24,10 @@ describe Board do
       expect { subject.print }.to output("[true, true, true]\n[true, true, true]\n[true, true, true]\n").to_stdout
     end
   end
+
+  describe '#space_is_free?' do
+    it 'checks to see if a space is free' do
+      expect(subject.space_is_free?(1, 1)).to eq(true)
+    end
+  end
 end

@@ -11,6 +11,10 @@ class Board
     puts "#{@grid[2]}"
   end
 
+  def space_is_free?(row, column)
+    @grid[row][column] == true
+  end
+
   private
 
   def create
