@@ -1,0 +1,55 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/user/Documents/Projects/week10/tic_tac_toe_tech_test/spec/board_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        10,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/user/Documents/Projects/week10/tic_tac_toe_tech_test/lib/board.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1502440635
+  }
+}
