@@ -1,7 +1,7 @@
 
-  require "matrix"
 
 class Rules
+
   def initialize; end
 
   def check_valid_move(index, board)

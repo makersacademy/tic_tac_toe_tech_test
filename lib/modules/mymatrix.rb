@@ -8,7 +8,7 @@ module MyMatrix
   end
 
   def get_diagonal_of(board)
-      Matrix.rows(board.grid).each(:diagonal).to_a
+    Matrix.rows(board.grid).each(:diagonal).to_a
   end
 
 end
