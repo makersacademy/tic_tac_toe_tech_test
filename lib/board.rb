@@ -4,9 +4,10 @@ class Board
     @grid = input.fetch(:grid, default_grid)
   end
 
-  private
 
+
+  private
   def default_grid
-    Array.new(3) { Array.new(3) { '_' } }
+    [[1, 2, 3],[4, 5 ,6],[7, 8, 9]]
   end
 end

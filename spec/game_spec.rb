@@ -8,8 +8,9 @@ describe Game do
 
   subject(:game) { described_class.new(player1, player2, board) }
 
-  context 'when initialized' do
+  context '#initialized' do
     it 'accepts a board' do
+      game.print_board
       expect(game.board).to eq board
     end
 

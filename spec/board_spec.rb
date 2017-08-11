@@ -1,10 +1,14 @@
 require 'board'
 
 describe Board do
-  input = { grid: [%w[_ _ _], %w[_ _ _], %w[_ _ _]] }
-  board = Board.new(input)
+  board = Board.new()
 
-  it 'is initialized with a grid' do
-    expect(board.grid).to eq input[:grid]
+  it 'can be initialized with a grid' do
+    expect { Board.new({grid: {}})}.not_to raise_error
   end
+
+  it 'has a default grid with 3 rows' do
+    expect(board.grid.size).to eq 3
+  end
+
 end
