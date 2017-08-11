@@ -6,15 +6,17 @@ As a player
 So that I can see the unclaimed positions
 I want to print out the grid of cells
 
+As a player
+So that I can win the game
+I want to be able to input my move
+
+As a player
+So that I know if I won
+I want to see the result when the game is over
+```
 
 
 ## Requirements
-
-* Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
-* Implement a command line interface that lets the humans play the game by typing commands into the terminal.
-* Players should be able to input their moves.
-* The board should be shown after each move.
-* The game should announce the result of the game when it's over.
 
 ### Rules of Tic-Tac-Toe
 

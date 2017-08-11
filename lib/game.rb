@@ -1,11 +1,12 @@
 require_relative 'board'
+require_relative 'player_x'
 
 class Game
 
   attr_reader :board
 
   def initialize(board = Board.new)
-   @board = board
+    @board = board
   end
 
   def show_board
