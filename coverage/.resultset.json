@@ -61,9 +61,47 @@
       "/Users/Simon/Projects/tech-tests/tic_tac_toe_tech_test/spec/game_spec.rb": [
         1,
         null,
-        2,
+        5,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        3,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/Simon/Projects/tech-tests/tic_tac_toe_tech_test/spec/player_spec.rb": [
+        1,
+        null,
+        3,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -71,6 +109,6 @@
         null
       ]
     },
-    "timestamp": 1502374054
+    "timestamp": 1502460903
   }
 }

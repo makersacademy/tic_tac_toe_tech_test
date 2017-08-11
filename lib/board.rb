@@ -7,7 +7,7 @@ class Board
     @grid = create_grid
   end
 
-  def set_cell(x, y, value)
+  def set_cell(x, y, value = 'X')
     raise "Cell taken by #{grid[x][y].value}" if grid[x][y].value != ''
     get_cell(x, y).value = value
     print_grid
