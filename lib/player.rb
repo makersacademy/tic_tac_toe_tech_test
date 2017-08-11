@@ -1,9 +1,11 @@
 class Player
 
-  attr_reader :name, :value
+  attr_accessor :value
+  attr_reader :name
 
-  def initialize(name, value)
+
+  def initialize(name)
     @name = name
-    @value = value
+    @value = nil
   end
 end
