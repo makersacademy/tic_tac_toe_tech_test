@@ -14,7 +14,7 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-11T20:56:08+01:00">2017-08-11T20:56:08+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-11T22:35:46+01:00">2017-08-11T22:35:46+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.21
+         2.5
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>116</b> relevant lines. 
-    <span class="green"><b>116</b> lines covered</span> and
+    <b>121</b> relevant lines. 
+    <span class="green"><b>121</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#c7fc6b2bd38de91a8298a736d7cb559035c39112" class="src_link" title="lib/board.rb">lib/board.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>49</td>
-        <td>27</td>
-        <td>27</td>
+        <td>57</td>
+        <td>32</td>
+        <td>32</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -93,7 +93,7 @@
       <tr>
         <td class="strong"><a href="#ae272ed74e9d60fe8ffce2c0bce0eeab6d0b1c22" class="src_link" title="spec/game_spec.rb">spec/game_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>65</td>
+        <td>63</td>
         <td>40</td>
         <td>40</td>
         <td>0</td>
@@ -131,8 +131,8 @@
     <h3>lib/board.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>27</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>32</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -161,25 +161,25 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  ROW_LENGTH = 3</code>
+          <code class="ruby">  SPACES = 9</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  COLUMN_LENGTH = 3</code>
+          <code class="ruby">  ROWS = [[0, 1, 2], [3, 4, 5], [2, 5, 8]]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  ROWS = [[0, 1, 2], [3, 4, 5], [2, 5, 8]]</code>
+          <code class="ruby">  COLUMNS = [[0, 3, 6], [3, 4, 5], [6, 7, 8]]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  COLUMNS = [[0, 3, 6], [3, 4, 5], [6, 7, 8]]</code>
+          <code class="ruby">  DIAGONALS = [[0, 4, 8], [2, 4, 6]]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -281,7 +281,7 @@
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    verticle_win? || horizontal_win? || diagonal_win?</code>
+          <code class="ruby">    win?(ROWS) || win?(COLUMNS) || win?(DIAGONALS)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
@@ -311,7 +311,7 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">  def create(n = ROW_LENGTH*COLUMN_LENGTH, val = &#39;-&#39;)</code>
+          <code class="ruby">  def create(n = SPACES, val = &#39;-&#39;)</code>
         </li>
       
         <li class="covered" data-hits="5" data-linenumber="30">
@@ -335,13 +335,13 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def verticle_win?</code>
+          <code class="ruby">  def win?(type)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="34">
+          <span class="hits">3</span>
           
-          <code class="ruby">    check_elements_are_equal(@grid[0], @grid[3], @grid[6]) || check_elements_are_equal(@grid[1], @grid[4], @grid[7]) || check_elements_are_equal(@grid[2], @grid[5], @grid[8])</code>
+          <code class="ruby">    type_has_three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -359,13 +359,13 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  def horizontal_win?</code>
+          <code class="ruby">  def row_or_column_win?(type)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
           
-          <code class="ruby">    check_elements_are_equal(@grid[3], @grid[4], @grid[5]) || check_elements_are_equal(@grid[0], @grid[1], @grid[2]) || check_elements_are_equal(@grid[6], @grid[7], @grid[8])</code>
+          <code class="ruby">    are_equal?(type[0]) || are_equal?(type[1]) || are_equal?(type[2])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
@@ -383,13 +383,13 @@
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">  def diagonal_win?</code>
+          <code class="ruby">  def diagonal_win?(type)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    check_elements_are_equal(@grid[0], @grid[4], @grid[8]) || check_elements_are_equal(@grid[2], @grid[4], @grid[6])</code>
+          <code class="ruby">    are_equal?(type[0]) || are_equal?(type[1])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
@@ -407,13 +407,13 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  def check_elements_are_equal(a, b, c)</code>
+          <code class="ruby">  def type_has_three_possible_solutions(type)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="46">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="3" data-linenumber="46">
+          <span class="hits">3</span>
           
-          <code class="ruby">    a == b &amp;&amp; b == c &amp;&amp; a != &#39;-&#39;</code>
+          <code class="ruby">    type.length == 3</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -428,7 +428,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def are_equal?(array)</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="50">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    grid_array = transform_to_spaces(array)</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="51">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    grid_array.uniq.length == 1 &amp;&amp; grid_array[0] != &quot;-&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def transform_to_spaces(array)</code>
+        </li>
+      
+        <li class="covered" data-hits="32" data-linenumber="55">
+          <span class="hits">32</span>
+          
+          <code class="ruby">    array.map { |e| grid[e] }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">end</code>
@@ -1011,364 +1059,352 @@
         <li class="covered" data-hits="9" data-linenumber="5">
           <span class="hits">9</span>
           
-          <code class="ruby">  let(:board) { double(grid: [&#39;-&#39;, &#39;-&#39;, &#39;-&#39;,&#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;]) }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  let(:second_board) { double(grid: [&#39;:x&#39;, &#39;-&#39;, &#39;-&#39;,&#39;:x&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;]) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="8">
-          <span class="hits">9</span>
-          
           <code class="ruby">  let(:player1) { double(symbol: :x) }</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="9">
+        <li class="covered" data-hits="9" data-linenumber="6">
           <span class="hits">9</span>
           
           <code class="ruby">  let(:player2) { double(symbol: :o) }</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
+        <li class="covered" data-hits="9" data-linenumber="7">
+          <span class="hits">9</span>
+          
+          <code class="ruby">  let(:board) { double(grid: [&#39;-&#39;, &#39;-&#39;, &#39;-&#39;,&#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;]) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  let(:second_board) { double(grid: [&#39;:x&#39;, &#39;-&#39;, &#39;-&#39;,&#39;:x&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;]) }</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="9">
           <span class="hits">8</span>
           
           <code class="ruby">  let(:game) { described_class.new(board, player1, player2) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
           <code class="ruby">  let(:second_game) { described_class.new(second_board, player1, player2) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#initialize&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;initializes with a board&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.board).to_not eq(nil)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;initializes with two players&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.players.length).to eq(2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;player1 starts as the current player&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.current_player).to eq(player1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  before do</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="29">
+        <li class="covered" data-hits="8" data-linenumber="27">
           <span class="hits">8</span>
           
           <code class="ruby">    allow(board).to receive(:space_is_free?).with(0).and_return(true)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="30">
+        <li class="covered" data-hits="8" data-linenumber="28">
           <span class="hits">8</span>
           
           <code class="ruby">    allow(board).to receive(:winning_move?).and_return(false)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="31">
+        <li class="covered" data-hits="8" data-linenumber="29">
           <span class="hits">8</span>
           
           <code class="ruby">    allow(board).to receive(:print)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#make_move&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;allows a player to make a move&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">      game.make_move(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.board.grid[0]).to eq(:x)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;switches the current player after a move&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">      game.make_move(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.current_player).to eq(player2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;allows players to take alternate turns&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">      game.make_move(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">      allow(board).to receive(:space_is_free?).with(1).and_return(true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
           <code class="ruby">      game.make_move(1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(game.board.grid[1]).to eq(:o)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;allows a player to pick a free space only&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">      game.make_move(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">      allow(board).to receive(:space_is_free?).with(0).and_return(false)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="55">
+        <li class="covered" data-hits="2" data-linenumber="53">
           <span class="hits">2</span>
           
           <code class="ruby">      expect { game.make_move(0) }.to raise_error(&#39;Space taken!&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;tells the players if there is a winner&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">      allow(second_board).to receive(:space_is_free?).with(6).and_return(true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
           <code class="ruby">      allow(second_board).to receive(:winning_move?).and_return(true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">      allow(second_board).to receive(:print).and_return(&#39;board&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="62">
+        <li class="covered" data-hits="2" data-linenumber="60">
           <span class="hits">2</span>
           
           <code class="ruby">      expect { second_game.make_move(6) }.to output(&quot;Win!\n&quot;).to_stdout</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">end</code>

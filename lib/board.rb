@@ -1,10 +1,10 @@
 class Board
   attr_reader :grid
 
-  ROW_LENGTH = 3
-  COLUMN_LENGTH = 3
+  SPACES = 9
   ROWS = [[0, 1, 2], [3, 4, 5], [2, 5, 8]]
   COLUMNS = [[0, 3, 6], [3, 4, 5], [6, 7, 8]]
+  DIAGONALS = [[0, 4, 8], [2, 4, 6]]
 
   def initialize
     @grid = create
@@ -21,29 +21,37 @@ class Board
   end
 
   def winning_move?
-    verticle_win? || horizontal_win? || diagonal_win?
+    win?(ROWS) || win?(COLUMNS) || win?(DIAGONALS)
   end
 
   private
 
-  def create(n = ROW_LENGTH*COLUMN_LENGTH, val = '-')
+  def create(n = SPACES, val = '-')
     Array.new(n, val)
   end
 
-  def verticle_win?
-    check_elements_are_equal(@grid[0], @grid[3], @grid[6]) || check_elements_are_equal(@grid[1], @grid[4], @grid[7]) || check_elements_are_equal(@grid[2], @grid[5], @grid[8])
+  def win?(type)
+    type_has_three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
   end
 
-  def horizontal_win?
-    check_elements_are_equal(@grid[3], @grid[4], @grid[5]) || check_elements_are_equal(@grid[0], @grid[1], @grid[2]) || check_elements_are_equal(@grid[6], @grid[7], @grid[8])
+  def row_or_column_win?(type)
+    are_equal?(type[0]) || are_equal?(type[1]) || are_equal?(type[2])
   end
 
-  def diagonal_win?
-    check_elements_are_equal(@grid[0], @grid[4], @grid[8]) || check_elements_are_equal(@grid[2], @grid[4], @grid[6])
+  def diagonal_win?(type)
+    are_equal?(type[0]) || are_equal?(type[1])
   end
 
-  def check_elements_are_equal(a, b, c)
-    a == b && b == c && a != '-'
+  def type_has_three_possible_solutions(type)
+    type.length == 3
   end
 
+  def are_equal?(array)
+    grid_array = transform_to_spaces(array)
+    grid_array.uniq.length == 1 && grid_array[0] != "-"
+  end
+
+  def transform_to_spaces(array)
+    array.map { |e| grid[e] }
+  end
 end

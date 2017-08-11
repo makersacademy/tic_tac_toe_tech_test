@@ -2,14 +2,12 @@ require 'game'
 
 describe Game do
 
-  let(:board) { double(grid: ['-', '-', '-','-', '-', '-', '-', '-', '-']) }
-  let(:second_board) { double(grid: [':x', '-', '-',':x', '-', '-', '-', '-', '-']) }
-
   let(:player1) { double(symbol: :x) }
   let(:player2) { double(symbol: :o) }
+  let(:board) { double(grid: ['-', '-', '-','-', '-', '-', '-', '-', '-']) }
+  let(:second_board) { double(grid: [':x', '-', '-',':x', '-', '-', '-', '-', '-']) }
   let(:game) { described_class.new(board, player1, player2) }
   let(:second_game) { described_class.new(second_board, player1, player2) }
-
 
   describe '#initialize' do
     it 'initializes with a board' do
