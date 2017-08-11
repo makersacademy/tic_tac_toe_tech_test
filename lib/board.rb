@@ -23,6 +23,7 @@ class Board
 
   def play_square(number)
     find_location(number)
+    print_board
   end
 
   private
