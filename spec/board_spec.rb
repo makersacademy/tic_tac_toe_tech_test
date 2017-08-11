@@ -24,12 +24,23 @@ describe Board do
 
   describe '#get_cell' do
     context 'allocating a specific cell position in the grid' do
+      it 'returns the cell that is called' do
+        grid = [['?', '?', '?'], ['?', '?', '?'], ['?', '?', '?']]
+        expect(board.get_cell(0, 0)).to eq '?'
+      end
+    end
+  end
+
+  describe '#set_cell' do
+    context 'receives the cell co-ordinates and sets a value it' do
       before do
         allow(board).to receive(:grid).and_return([['X', '?', '?'], ['?', '?', '?'], ['?', '?', '?']])
+        allow(board).to receive(:set_cell) {'X'}
       end
-      it 'returns the cell that is called' do
+      it 'sets a value of X to the specified cell' do
         grid = [['X', '?', '?'], ['?', '?', '?'], ['?', '?', '?']]
-        expect(board.get_cell(0, 0)).to eq 'X'
+        board.get_cell(0, 0)
+        expect(board.set_cell(0, 0, 'X')).to eq 'X'
       end
     end
   end
