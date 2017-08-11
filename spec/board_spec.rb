@@ -17,10 +17,24 @@ describe Board do
     end
   end
 
-  describe '#print_board' do
-    it "prints the board" do
+  context 'A board is already created' do
+
+    before do
       board1.create_board
-      expect { board1.print_board }.to output("[1, 2, 3]\n[4, 5, 6]\n[7, 8, 9]\n").to_stdout
+    end
+
+    describe '#print_board' do
+      it "prints the board" do
+        expect { board1.print_board }.to output("[1, 2, 3]\n[4, 5, 6]\n[7, 8, 9]\n").to_stdout
+      end
+    end
+
+    describe '#play_square' do
+      it "plays a square on the board as either 'X' or 'O' and shows the board" do
+        board1.play_square(5)
+        expect { board1.print_board }.to output("[1, 2, 3]\n[4, \"X\", 6]\n[7, 8, 9]\n").to_stdout
+      end
     end
   end
+
 end
