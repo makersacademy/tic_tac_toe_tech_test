@@ -12,9 +12,10 @@ describe Game do
 
   describe '#show_board' do
     it 'prints the board' do
-      expect{ game.show_board }.to output("- - -\n" +
-                                          "- - -\n" +
-                                          "- - -\n").to_stdout
+      expect{ game.show_board }.to output("* 1 2 3\n" +
+                                          "1 - - -\n" +
+                                          "2 - - -\n" +
+                                          "3 - - -\n").to_stdout
     end
   end
 end

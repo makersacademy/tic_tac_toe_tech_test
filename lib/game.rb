@@ -1,5 +1,6 @@
 require_relative 'board'
 require_relative 'player_x'
+require_relative 'player_o'
 
 class Game
 
