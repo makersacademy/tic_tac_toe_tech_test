@@ -12,11 +12,11 @@ class Player
   end
 
   def self.create_one
-    Player.new(token: "X")
+    Player.new("X")
   end
 
   def self.create_two
-    Player.new(token: "Y")
+    Player.new("Y")
   end
 
 end

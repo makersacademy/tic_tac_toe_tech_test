@@ -27,6 +27,11 @@ class Game
     current_player == player_one ? current_player=(player_two) : current_player=(player_one)
   end
 
+  def one_whole_turn
+    get_move
+    exit if game_over?
+  end
+
   private
 
   def get_move
@@ -40,8 +45,4 @@ class Game
     return if rules.draw?(board)
   end
 
-  def one_whole_turn
-    get_move
-    exit if game_over?
-  end
 end

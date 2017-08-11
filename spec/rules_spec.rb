@@ -92,4 +92,23 @@ describe Rules do
       end
     end
   end
+
+
+  describe "#left_diagonal_win?" do
+
+    context "when the same symbol marks a natural diagonal" do
+
+      let(:left_dia) { [[['X'], [], []],
+                       [[], ['X'], []],
+                       [[], [], ['X']]] }
+
+      it "will return true" do
+        p expect(rules.left_diagonal_win?(left_dia))
+      end
+
+    end
+
+  end
+
+
 end

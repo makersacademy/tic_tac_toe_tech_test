@@ -1,4 +1,6 @@
 
+  require "matrix"
+
 class Rules
   def initialize; end
 
@@ -14,6 +16,14 @@ class Rules
   def victory?(board)
     return if row_win?(board)
     return if col_win?(board)
+  end
+
+  def get_diagonal_of(board)
+     Matrix.rows(board).each(:diagonal).to_a
+  end
+
+  def left_diagonal_win?(board)
+     victory(get_diagonal_of(board))
   end
 
   private
