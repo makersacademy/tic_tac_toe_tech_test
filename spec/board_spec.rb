@@ -21,7 +21,9 @@ describe Board do
 
   describe '#set_value_in_position' do
     it 'sets a value in a specified position' do
-      expect(board.set_value_in_position(line: 0, column: 2, value: :X)).to eq :X
+      board.set_value_in_position(position_label: 3, move: :X)
+      expect(board.get_value_from_position(line: 0, column: 2)).to eq :X
     end
   end
+
 end

@@ -24,7 +24,7 @@ class Game
 
   def make_move
     get_input
-    @board.update({position_label: @current_move, move: @current_player.move})
+    @board.set_value_in_position({position_label: @current_move, move: @current_player.move})
   end
 
 private
