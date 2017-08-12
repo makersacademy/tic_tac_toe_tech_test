@@ -1,5 +1,9 @@
 # Tic-Tac-Toe tech test
 
+[![Build Status](https://travis-ci.org/Corina/tic_tac_toe_tech_test.svg?branch=master)](https://travis-ci.org/Corina/tic_tac_toe_tech_test)
+
+[![Coverage Status](https://coveralls.io/repos/github/makersacademy/tic_tac_toe_tech_test/badge.svg?branch=master)](https://coveralls.io/github/makersacademy/tic_tac_toe_tech_test?branch=master)
+
 ## User Stories
 
 As an 'almost finished Makers course' student,  
