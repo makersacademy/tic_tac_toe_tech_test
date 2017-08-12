@@ -1,7 +1,6 @@
 class Board
   attr_reader :grid
 
-
   def initialize(grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     @grid = grid
   end
@@ -30,7 +29,8 @@ class Board
     move_counter == 9 && !winning?
   end
 
-private
+  private
+
   def value_to_coordinates(position_label)
     correspondence = {
       1 => [0, 0],
@@ -51,18 +51,17 @@ private
   end
 
   def same_values?(array)
-    array.all? { |value| value == array[0]}
+    array.all? { |value| value == array[0] }
   end
 
   def diagonals
     [
-    [get_value({x:0, y:0}), get_value({x:1, y:1}),  get_value({x:2, y:2})],
-    [get_value({x:0, y:2}), get_value({x:1, y:1}),  get_value({x:2, y:0})]
+      [get_value(x: 0, y: 0), get_value(x: 1, y: 1), get_value(x: 2, y: 2)],
+      [get_value(x: 0, y: 2), get_value(x: 1, y: 1), get_value(x: 2, y: 0)]
     ]
   end
 
   def move_counter
     @grid.flatten.count { |move| move == :X || move == :O }
   end
-
 end

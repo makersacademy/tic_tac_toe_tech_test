@@ -4,7 +4,6 @@ require_relative 'board'
 class Game
   attr_reader :player1, :player2, :board, :current_move, :current_player
 
-
   def initialize(arguments)
     @player1 = arguments.fetch(:player1)
     @player2 = arguments.fetch(:player2)
@@ -24,7 +23,7 @@ class Game
 
   def make_move
     get_input
-    @board.set_value({position_label: @current_move, move: @current_player.move})
+    @board.set_value(position_label: @current_move, move: @current_player.move)
   end
 
   def check_winner
@@ -33,7 +32,7 @@ class Game
 
   def end_game?
     check_winner
-    return true if (@winner || @board.draw?)
+    return true if @winner || @board.draw?
   end
 
   def result
@@ -48,14 +47,15 @@ class Game
   end
 
   def turns
-    until end_game? do
+    until end_game?
       make_move
       print_board
       switch_players
     end
   end
 
-private
+  private
+
   def switch_players
     unless end_game?
       @current_player == @player1 ? @current_player = @player2 : @current_player = @player1
@@ -65,5 +65,4 @@ private
   def decide_first_player
     @current_player = [@player1, @player2].sample
   end
-
 end

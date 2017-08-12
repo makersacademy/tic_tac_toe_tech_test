@@ -2,7 +2,7 @@ require 'board'
 
 describe Board do
   subject(:board) { described_class.new([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) }
-  subject(:board2) { described_class.new([[:X, :O, :X], [:X, :X, :O], [:O, :X, :O]]) }
+  subject(:board2) { described_class.new([%i[X O X], %i[X X O], %i[O X O]]) }
 
   context 'when initialized' do
     it 'accepts a grid' do
@@ -28,7 +28,6 @@ describe Board do
   end
 
   describe '#winning?' do
-
     it 'returns false if there are no winnign combinations' do
       expect(board.winning?).to eq false
     end
@@ -42,7 +41,6 @@ describe Board do
   end
 
   describe '#draw?' do
-
     it 'returns true if there is a draw' do
       expect(board2.draw?).to eq true
     end
