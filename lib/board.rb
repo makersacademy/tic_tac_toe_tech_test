@@ -37,7 +37,7 @@ private
       2 => [0, 1],
       3 => [0, 2],
       4 => [1, 0],
-      5 => [1, 0],
+      5 => [1, 1],
       6 => [1, 2],
       7 => [2, 0],
       8 => [2, 1],
@@ -60,7 +60,7 @@ private
     [get_value({x:0, y:2}), get_value({x:1, y:1}),  get_value({x:2, y:0})]
     ]
   end
-  
+
   def move_counter
     @grid.flatten.count { |move| move == :X || move == :O }
   end
