@@ -1,7 +1,6 @@
 require 'player'
 
 describe Player do
-
   let(:player1) { described_class.new(:x) }
 
   describe '#initialize' do

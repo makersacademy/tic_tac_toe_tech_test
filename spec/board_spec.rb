@@ -8,7 +8,7 @@ describe Board do
     end
 
     it 'all positions start as "-"' do
-      expect(subject.grid.all? { |x| x == subject.grid[0] && subject.grid[0] == "-" })
+      expect(subject.grid.all? { |x| x == subject.grid[0] && subject.grid[0] == '-' })
     end
   end
 

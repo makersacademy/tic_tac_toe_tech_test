@@ -1,12 +1,11 @@
 require 'game'
 
 describe Game do
-
   let(:player1) { double(symbol: :x) }
   let(:player2) { double(symbol: :o) }
-  let(:board) { double(grid: ['-', '-', '-','-', '-', '-', '-', '-', '-']) }
-  let(:second_board) { double(grid: [':x', '-', '-',':x', '-', '-', '-', '-', '-']) }
-  let(:third_board) { double(grid: [':o', ':x', ':o',':x', ':x', ':o', '-', ':o', ':x']) }
+  let(:board) { double(grid: ['-', '-', '-', '-', '-', '-', '-', '-', '-']) }
+  let(:second_board) { double(grid: [':x', '-', '-', ':x', '-', '-', '-', '-', '-']) }
+  let(:third_board) { double(grid: [':o', ':x', ':o', ':x', ':x', ':o', '-', ':o', ':x']) }
   let(:game) { described_class.new(board, player1, player2) }
   let(:second_game) { described_class.new(second_board, player1, player2) }
   let(:third_game) { described_class.new(third_board, player1, player2) }

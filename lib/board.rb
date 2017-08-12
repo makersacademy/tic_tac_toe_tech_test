@@ -2,9 +2,9 @@ class Board
   attr_reader :grid
 
   SPACES = 9
-  ROWS = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-  COLUMNS = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
-  DIAGONALS = [[0, 4, 8], [2, 4, 6]]
+  ROWS = [[0, 1, 2], [3, 4, 5], [6, 7, 8]].freeze
+  COLUMNS = [[0, 3, 6], [1, 4, 7], [2, 5, 8]].freeze
+  DIAGONALS = [[0, 4, 8], [2, 4, 6]].freeze
 
   def initialize
     @grid = create
@@ -25,7 +25,7 @@ class Board
   end
 
   def drawing_move?
-    !winning_move? && !@grid.include?("-")
+    !winning_move? && !@grid.include?('-')
   end
 
   private
@@ -35,7 +35,7 @@ class Board
   end
 
   def win?(type)
-    has_three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
+    three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
   end
 
   def row_or_column_win?(type)
@@ -46,13 +46,13 @@ class Board
     are_equal?(type[0]) || are_equal?(type[1])
   end
 
-  def has_three_possible_solutions(type)
+  def three_possible_solutions(type)
     type.length == 3
   end
 
   def are_equal?(array)
     grid_array = transform_to_spaces(array)
-    grid_array.uniq.length == 1 && grid_array[0] != "-"
+    grid_array.uniq.length == 1 && grid_array[0] != '-'
   end
 
   def transform_to_spaces(array)
