@@ -3,14 +3,13 @@ require 'game'
 describe Game do
   let(:player1) { double(name: :Bob, weapon: :X) }
   let(:player2) { double(name: :Mike, weapon: :O) }
-  grid = [%w[_ _ _], %w[_ _ _], %w[_ _ _]]
+  grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
   let(:board) { double(grid: grid) }
 
   subject(:game) { described_class.new(player1, player2, board) }
 
   context '#initialized' do
     it 'accepts a board' do
-      game.print_board
       expect(game.board).to eq board
     end
 

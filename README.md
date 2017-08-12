@@ -2,22 +2,22 @@
 
 ## User Stories
 
-As an 'almost finished Makers course' student,
+As an 'almost finished Makers course' student,  
 
-So I can relax,
-I want to play a game of tic-tac-toe with a friend
+So I can relax,  
+I want to play a game of tic-tac-toe with a friend  
 
-So I can decide where to put my first move,
-I want to see the empty board
+So I can decide where to put my first move,  
+I want to see the empty board  
 
-So I can make my move,
-I want to input my command through the command line
+So I can make my move,  
+I want to input my command through the command line  
 
-So I can decide my next move,
-I want to see the board after every move
+So I can decide my next move,  
+I want to see the board after every move  
 
-So I know who won,
-I want to see the result of the game when it's over
+So I know who won,  
+I want to see the result of the game when it's over  
 
 
 
