@@ -13,16 +13,16 @@ describe Board do
     end
   end
 
-  describe '#get_value_from_position' do
+  describe '#get_value' do
     it 'gets the value on certain position' do
-      expect(board.get_value_from_position(line: 0, column: 2)).to eq 3
+      expect(board.get_value(x: 0, y: 2)).to eq 3
     end
   end
 
-  describe '#set_value_in_position' do
+  describe '#set_value' do
     it 'sets a value in a specified position' do
-      board.set_value_in_position(position_label: 3, move: :X)
-      expect(board.get_value_from_position(line: 0, column: 2)).to eq :X
+      board.set_value(position_label: 3, move: :X)
+      expect(board.get_value(x: 0, y: 2)).to eq :X
     end
   end
 

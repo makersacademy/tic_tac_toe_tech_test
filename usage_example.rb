@@ -8,6 +8,9 @@ game = Game.new({player1: player1, player2: player2, board: board })
 
 game.print_board
 game.current_player
+
+board.winning_combinations
+
 game.make_move
 game.print_board
 

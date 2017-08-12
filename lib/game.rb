@@ -4,6 +4,8 @@ require_relative 'board'
 class Game
   attr_reader :player1, :player2, :board, :current_move, :current_player
 
+
+
   def initialize(arguments)
     @player1 = arguments.fetch(:player1)
     @player2 = arguments.fetch(:player2)
@@ -24,7 +26,7 @@ class Game
 
   def make_move
     get_input
-    @board.set_value_in_position({position_label: @current_move, move: @current_player.move})
+    @board.set_value({position_label: @current_move, move: @current_player.move})
   end
 
 private

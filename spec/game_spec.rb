@@ -49,7 +49,7 @@ describe Game do
       io_obj = double
       expect(game).to receive(:gets).and_return(io_obj)
       expect(io_obj).to receive(:chomp).and_return(3)
-      expect(board).to receive(:set_value_in_position)
+      expect(board).to receive(:set_value)
     end
 
     it 'requests the board to update' do
