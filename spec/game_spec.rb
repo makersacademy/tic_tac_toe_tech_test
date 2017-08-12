@@ -22,24 +22,6 @@ describe Game do
     end
   end
 
-  describe '#print_board' do
-    it 'prints the board' do
-      expect(game).to respond_to(:print_board)
-    end
-  end
-
-  describe '#get_input' do
-    before do
-      io_obj = double
-      expect(game).to receive(:gets).and_return(io_obj)
-      expect(io_obj).to receive(:chomp).and_return(3)
-    end
-
-    it 'records the position where a player wants to play next' do
-      expect { game.get_input }.to change { game.current_move }.from(nil).to(3)
-    end
-  end
-
   describe '#make_move' do
     before do
       io_obj = double

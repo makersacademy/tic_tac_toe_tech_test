@@ -8,18 +8,9 @@ class Game
     @player1 = arguments.fetch(:player1)
     @player2 = arguments.fetch(:player2)
     @board = arguments.fetch(:board)
+    decide_first_player
   end
 
-  def print_board
-    @board.grid.each do |line|
-      puts line.join(' | ')
-    end
-  end
-
-  def get_input
-    puts "#{@current_player.name} please choose the next position for #{@current_player.move}"
-    @current_move = gets.chomp
-  end
 
   def make_move
     get_input
@@ -41,7 +32,6 @@ class Game
 
   def play
     print_board
-    decide_first_player
     turns
     result
   end
@@ -55,6 +45,17 @@ class Game
   end
 
   private
+
+  def print_board
+    @board.grid.each do |line|
+      puts line.join(' | ')
+    end
+  end
+
+  def get_input
+    puts "#{@current_player.name} please choose the next position for #{@current_player.move}"
+    @current_move = gets.chomp
+  end
 
   def switch_players
     unless end_game?
