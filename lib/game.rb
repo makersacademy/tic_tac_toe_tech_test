@@ -13,6 +13,7 @@ class Game
   def make_move(space)
     raise 'Space taken!' unless @board.space_is_free?(space)
     @board.grid[space] = @current_player.symbol
+    draw_message if @board.drawing_move?
     @board.winning_move? ? win_scenario : non_win_scenario
   end
 
@@ -34,5 +35,9 @@ class Game
   def non_win_scenario
     switch_current_player
     @board.print
+  end
+
+  def draw_message
+    puts 'Draw! Start a new game.'
   end
 end

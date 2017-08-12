@@ -24,6 +24,10 @@ class Board
     win?(ROWS) || win?(COLUMNS) || win?(DIAGONALS)
   end
 
+  def drawing_move?
+    !winning_move? && !@grid.include?("-")
+  end
+
   private
 
   def create(n = SPACES, val = '-')
@@ -31,7 +35,7 @@ class Board
   end
 
   def win?(type)
-    type_has_three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
+    has_three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
   end
 
   def row_or_column_win?(type)
@@ -42,7 +46,7 @@ class Board
     are_equal?(type[0]) || are_equal?(type[1])
   end
 
-  def type_has_three_possible_solutions(type)
+  def has_three_possible_solutions(type)
     type.length == 3
   end
 

@@ -8,7 +8,7 @@ describe Board do
     end
 
     it 'all positions start as "-"' do
-      expect(subject.grid.all? { |x| x == subject.grid[0] })
+      expect(subject.grid.all? { |x| x == subject.grid[0] && subject.grid[0] == "-" })
     end
   end
 
@@ -27,6 +27,12 @@ describe Board do
   describe '#winning_move?' do
     it 'checks to see if a move is a winner' do
       expect(subject.winning_move?).to eq(false)
+    end
+  end
+
+  describe '#drawing_move?' do
+    it 'checks to see if a game is a draw' do
+      expect(subject.drawing_move?).to eq(false)
     end
   end
 end
