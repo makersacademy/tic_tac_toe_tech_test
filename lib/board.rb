@@ -19,15 +19,15 @@ class Board
     @grid[line][column] = argument.fetch(:move)
   end
 
-  def winning_combinations
-    @grid + @grid.transpose + diagonals
+  def winning?
+    winning_combinations.each do |combination|
+      return true if same_values?(combination)
+    end
+    false
   end
 
-  def diagonals
-    [
-    [get_value({x:0, y:0}), get_value({x:1, y:1}),  get_value({x:2, y:2})],
-    [get_value({x:0, y:2}), get_value({x:1, y:1}),  get_value({x:2, y:0})]
-    ]
+  def draw?
+    move_counter == 9 && !winning?
   end
 
 private
@@ -44,6 +44,25 @@ private
       9 => [2, 2]
     }
     correspondence[Integer(position_label)]
+  end
+
+  def winning_combinations
+    @grid + @grid.transpose + diagonals
+  end
+
+  def same_values?(array)
+    array.all? { |value| value == array[0]}
+  end
+
+  def diagonals
+    [
+    [get_value({x:0, y:0}), get_value({x:1, y:1}),  get_value({x:2, y:2})],
+    [get_value({x:0, y:2}), get_value({x:1, y:1}),  get_value({x:2, y:0})]
+    ]
+  end
+  
+  def move_counter
+    @grid.flatten.count { |move| move == :X || move == :O }
   end
 
 end
