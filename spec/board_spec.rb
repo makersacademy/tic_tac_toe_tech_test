@@ -44,6 +44,14 @@ describe Board do
         board.set_cell(1, 1 ,'O')
         expect(board.print_grid).to eq [['?', '?', '?'], ['?', 'O', '?'],['?', '?', '?']]
       end
+
+      it 'sets a value of X and O to the specified cells' do
+        board.get_cell(0, 2)
+        board.set_cell(0, 2, 'X')
+        board.get_cell(0, 1)
+        board.set_cell(0, 1, 'O')
+        expect(board.print_grid).to eq [['?', '?', '?'], ['O', '?', '?'], ['X', '?', '?']]
+      end
     end
   end
 end
