@@ -22,7 +22,7 @@ describe Board do
     end
   end
 
-  describe '#get_cell' do
+  describe '#get_cell_value' do
     context 'allocating a specific cell position in the grid' do
       it 'returns the cell that is called' do
         grid = [['?', '?', '?'], ['?', '?', '?'], ['?', '?', '?']]
@@ -31,16 +31,18 @@ describe Board do
     end
   end
 
-  describe '#set_cell' do
+  describe '#set_cell_value' do
     context 'receives the cell co-ordinates and sets a value it' do
-      before do
-        allow(board).to receive(:grid).and_return([['X', '?', '?'], ['?', '?', '?'], ['?', '?', '?']])
-        allow(board).to receive(:set_cell) {'X'}
-      end
       it 'sets a value of X to the specified cell' do
-        grid = [['X', '?', '?'], ['?', '?', '?'], ['?', '?', '?']]
         board.get_cell(0, 0)
-        expect(board.set_cell(0, 0, 'X')).to eq 'X'
+        board.set_cell(0, 0, 'X')
+        expect(board.print_grid).to eq [['X', '?', '?'], ['?', '?', '?'], ['?', '?', '?']]
+      end
+
+      it 'sets a value of O to the specified cell' do
+        board.get_cell(1, 1)
+        board.set_cell(1, 1 ,'O')
+        expect(board.print_grid).to eq [['?', '?', '?'], ['?', 'O', '?'],['?', '?', '?']]
       end
     end
   end

@@ -15,10 +15,10 @@ class Board
   end
 
   def get_cell(x, y)
-    grid[y][x]
+    @grid[y][x]
   end
 
   def set_cell(x, y, value)
-    get_cell(x, y).value = value
+    @grid[y][x] = Cell.new(value).value
   end
 end
