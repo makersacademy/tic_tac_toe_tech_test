@@ -11,37 +11,15 @@ class Game
     decide_first_player
   end
 
-
   def make_move
     get_input
     @board.set_value(position_label: @current_move, move: @current_player.move)
   end
 
-  def check_winner
-    @winner = @current_player if @board.winning?
-  end
-
-  def end_game?
-    check_winner
-    return true if @winner || @board.draw?
-  end
-
-  def result
-    @winner ? "The winner is #{@winner.name}" : "It's a draw"
-  end
-
   def play
     print_board
     turns
-    result
-  end
-
-  def turns
-    until end_game?
-      make_move
-      print_board
-      switch_players
-    end
+    p result
   end
 
   private
@@ -57,13 +35,35 @@ class Game
     @current_move = gets.chomp
   end
 
+  def decide_first_player
+    @current_player = [@player1, @player2].sample
+  end
+
+  def turns
+    until end_game?
+      make_move
+      print_board
+      switch_players
+    end
+  end
+
   def switch_players
     unless end_game?
       @current_player == @player1 ? @current_player = @player2 : @current_player = @player1
     end
   end
 
-  def decide_first_player
-    @current_player = [@player1, @player2].sample
+  def check_winner
+    @winner = @current_player if @board.winning?
   end
+
+  def end_game?
+    check_winner
+    return true if @winner || @board.draw?
+  end
+
+  def result
+    @winner ? "The winner is #{@winner.name}" : "It's a draw"
+  end
+
 end

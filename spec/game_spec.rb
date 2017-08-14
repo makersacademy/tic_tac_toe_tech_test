@@ -34,4 +34,32 @@ describe Game do
       game.make_move
     end
   end
+
+  describe '#play' do
+
+    context 'when there is a winner' do
+
+      before do
+        expect(board).to receive(:winning?).and_return(true)
+      end
+
+      it 'anounce a winner' do
+        player_name = game.current_player.name
+        expect(game.play).to eq ("The winner is " + player_name.to_s)
+      end
+    end
+
+    context 'when there is a draw' do
+
+      before do
+        expect(board).to receive(:winning?).and_return(false)
+        expect(board).to receive(:draw?).and_return(true)
+      end
+
+      it 'anounce a draw' do
+        expect(game.play).to eq "It's a draw"
+      end
+    end
+  end
+  
 end
