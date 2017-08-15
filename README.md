@@ -1,5 +1,30 @@
 # Tic-Tac-Toe tech test
 
+[![Build Status](https://travis-ci.org/Corina/tic_tac_toe_tech_test.svg?branch=master)](https://travis-ci.org/Corina/tic_tac_toe_tech_test)
+[![Coverage Status](https://coveralls.io/repos/github/Corina/tic_tac_toe_tech_test/badge.svg?branch=master)](https://coveralls.io/github/Corina/tic_tac_toe_tech_test?branch=master)
+
+## User Stories
+
+As an 'almost finished Makers course' student,  
+
+So I can relax,  
+I want to play a game of tic-tac-toe with a friend  
+
+So I can decide where to put my first move,  
+I want to see the empty board  
+
+So I can make my move,  
+I want to input my command through the command line  
+
+So I can decide my next move,  
+I want to see the board after every move  
+
+So I know who won,  
+I want to see the result of the game when it's over  
+
+
+
+
 ## Requirements
 
 * Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
