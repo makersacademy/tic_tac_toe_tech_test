@@ -6,15 +6,20 @@ class Board
   end
 
   def get_value(position)
-    line = position.fetch(:x)
-    column = position.fetch(:y)
+    line, column = get_line_column(position)
     @grid[line][column]
+  end
+
+  def get_line_column(position)
+    line = position[0]
+    column = position[1]
+    return line, column
   end
 
   def set_value(argument)
     position = value_to_coordinates(argument.fetch(:position_label))
-    line = position[0]
-    column = position[1]
+    validate_move(position)
+    line, column = get_line_column(position)
     @grid[line][column] = argument.fetch(:move)
   end
 
@@ -31,6 +36,14 @@ class Board
 
   private
 
+  def validate_position(position_label)
+    raise ArgumentError, "Invalid position. Try again." unless (1..9).include?(position_label.to_i)
+  end
+
+  def validate_move(position)
+    raise ArgumentError, "Invalid move, position already taken. Try again." unless (1..9).include?(get_value(position))
+  end
+
   def value_to_coordinates(position_label)
     correspondence = {
       1 => [0, 0],
@@ -43,6 +56,7 @@ class Board
       8 => [2, 1],
       9 => [2, 2]
     }
+    validate_position(position_label)
     correspondence[Integer(position_label)]
   end
 
@@ -56,8 +70,8 @@ class Board
 
   def diagonals
     [
-      [get_value(x: 0, y: 0), get_value(x: 1, y: 1), get_value(x: 2, y: 2)],
-      [get_value(x: 0, y: 2), get_value(x: 1, y: 1), get_value(x: 2, y: 0)]
+      [get_value([0, 0]), get_value([1, 1]), get_value([2, 2])],
+      [get_value([0, 2]), get_value([1, 1]), get_value([2, 0])]
     ]
   end
 

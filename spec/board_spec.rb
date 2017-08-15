@@ -16,15 +16,25 @@ describe Board do
 
   describe '#get_value' do
     it 'gets the value on certain position' do
-      expect(board.get_value(x: 0, y: 2)).to eq 3
+      expect(board.get_value([0, 2])).to eq 3
     end
   end
 
   describe '#set_value' do
     it 'sets a value in a specified position' do
       board.set_value(position_label: 3, move: :X)
-      expect(board.get_value(x: 0, y: 2)).to eq :X
+      expect(board.get_value([0, 2])).to eq :X
     end
+
+    it 'raises an error for positions outside the 1..9 range' do
+      expect { board.set_value(position_label: 10, move: :X) }.to raise_error("Invalid position. Try again.")
+    end
+
+    it 'raises an error for moves on already played positions' do
+      board.set_value(position_label: 1, move: :X)
+      expect { board.set_value(position_label: 1, move: :X) }.to raise_error("Invalid move, position already taken. Try again.")
+    end
+
   end
 
   describe '#winning?' do

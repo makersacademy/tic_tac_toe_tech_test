@@ -41,9 +41,13 @@ class Game
 
   def turns
     until end_game?
-      make_move
-      print_board
-      switch_players
+      begin
+        make_move
+        print_board
+        switch_players
+      rescue => error
+        p error.message
+      end
     end
   end
 
