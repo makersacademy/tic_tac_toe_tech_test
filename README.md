@@ -24,10 +24,14 @@ Ruby, Rspec, Rubocop (linter) and Coverall.
 ![ScreenShot](http://imgur.com/S2kGqZe.jpg)
 
 * Make moves alternating between Player 1 and Player 2:
+![ScreenShot](http://imgur.com/WSJcAMl.jpg)
 
-* End with a win, draw or lose:
+* Win, draw or lose:
+![ScreenShot](http://imgur.com/5ph80On.jpg)
+
 
 ## Test Coverage
 
 I have 100% coverage according to Coverall:
+![ScreenShot](http://imgur.com/3GXnQYP.jpg)
 
