@@ -11,7 +11,7 @@ class Game
   end
 
   def make_move(space)
-    raise 'Space taken!' unless @board.space_is_free?(space)
+    valid_choice?(space)
     @board.grid[space] = @current_player.symbol
     draw_message if @board.drawing_move?
     @board.winning_move? ? win_scenario : non_win_scenario
@@ -19,8 +19,17 @@ class Game
 
   private
 
+  def valid_choice?(space)
+    raise 'Choose between 0 and 8' unless @board.space_exist?(space)
+    raise 'Space taken!' unless @board.space_is_free?(space)
+  end
+
   def switch_current_player
     @current_player = @players.find { |player| player != @current_player }
+  end
+
+  def draw_message
+    puts 'Draw! Start a new game.'
   end
 
   def win_message
@@ -35,9 +44,5 @@ class Game
   def non_win_scenario
     switch_current_player
     @board.print
-  end
-
-  def draw_message
-    puts 'Draw! Start a new game.'
   end
 end

@@ -16,8 +16,12 @@ class Board
     puts "|#{@grid[6]}|" + "#{@grid[7]}|" + "#{@grid[8]}|"
   end
 
+  def space_exist?(space)
+    space >= 0 && space < 9
+  end
+
   def space_is_free?(space)
-    @grid[space] == '-'
+    space_exist?(space) && @grid[space] == '-'
   end
 
   def winning_move?
