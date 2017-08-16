@@ -17,7 +17,7 @@ class Board
   end
 
   def space_exist?(space)
-    space >= 0 && space < 9
+    space >= SPACES - SPACES && space < SPACES
   end
 
   def space_is_free?(space)
@@ -43,18 +43,18 @@ class Board
   end
 
   def row_or_column_win?(type)
-    are_equal?(type[0]) || are_equal?(type[1]) || are_equal?(type[2])
+    symbols_are_equal?(type[0]) || symbols_are_equal?(type[1]) || symbols_are_equal?(type[2])
   end
 
   def diagonal_win?(type)
-    are_equal?(type[0]) || are_equal?(type[1])
+    symbols_are_equal?(type[0]) || symbols_are_equal?(type[1])
   end
 
   def three_possible_solutions(type)
     type.length == 3
   end
 
-  def are_equal?(array)
+  def symbols_are_equal?(array)
     grid_array = transform_to_spaces(array)
     grid_array.uniq.length == 1 && grid_array[0] != '-'
   end
