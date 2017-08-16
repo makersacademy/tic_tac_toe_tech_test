@@ -21,7 +21,7 @@ class Board
   end
 
   def space_is_free?(space)
-    space_exist?(space) && @grid[space] == '-'
+    space_exist?(space) && grid[space] == '-'
   end
 
   def winning_move?
@@ -29,7 +29,7 @@ class Board
   end
 
   def drawing_move?
-    !winning_move? && !@grid.include?('-')
+    !winning_move? && !grid.include?('-')
   end
 
   private
@@ -39,7 +39,7 @@ class Board
   end
 
   def win?(type)
-    three_possible_solutions(type) ? row_or_column_win?(type) : diagonal_win?(type)
+    three_possible_solutions?(type) ? row_or_column_win?(type) : diagonal_win?(type)
   end
 
   def row_or_column_win?(type)
@@ -50,7 +50,7 @@ class Board
     symbols_are_equal?(type[0]) || symbols_are_equal?(type[1])
   end
 
-  def three_possible_solutions(type)
+  def three_possible_solutions?(type)
     type.length == 3
   end
 
