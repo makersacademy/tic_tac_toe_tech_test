@@ -10,7 +10,7 @@
 
 ## My Approach
 
-My priority for this test was the production of high quality code.  With this in mind I spent some time diagraming possible architectures and decided on three units: a board, a game and a player.  These all have separate responsibilities and the programme adheares to the Law of Demeter.  Only the Game class has any knowledge of the other classes. The greatest challenge was writing the logic to check if a move was a winning move. I enjoyed this part of the problem the most and ended up with a refactored solution. 
+As with the last tech test my priority was to output high quality code as I would aim to do in a real tech test.  My first step was to read the specification and look at the domain language.  I diagrammed three classes: Game, Player and Board and considered how I would like them to interact.  In order to adhere to the Law of Demeter, I decided that I wanted Game to have knowledge of the other two classes but for Player and Board to have no knowledge of Game. The greatest challenge was creating the logic to calculate a winning move and this was the part of the problem that I enjoyed the most.  I started with very basic logic for this calculation and refactored several times to get a DRY-er block of code and a more elegant solution.
 
 ## Technologies Used
 
