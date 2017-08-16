@@ -1,25 +1,32 @@
 # Tic-Tac-Toe tech test
 
-## Requirements
+## Specification
 
-* Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
+* Write a program that lets two humans play Tic-Tac-Toe against each other.
 * Implement a command line interface that lets the humans play the game by typing commands into the terminal.
 * Players should be able to input their moves.
 * The board should be shown after each move.
 * The game should announce the result of the game when it's over.
 
-### Rules of Tic-Tac-Toe
+## My Approach
 
-```
-O X X
-X X O
-O X O
-```
+My priority for this test was the production of high quality code.  With this in mind I spent some time diagraming possible architectures and decided on three units: a board, a game and a player.  These all have separate responsibilities and the programme adheares to the Law of Demeter.  Only the Game class has any knowledge of the other classes. The greatest challenge was writing the logic to check if a move was a winning move. I enjoyed this part of the problem the most and ended up with a refactored solution. 
 
-* There are two players in the game (X and O).
-* The board is 9 positions in a 3x3 grid.
-* Players take turns until the game is over.
-* A player can claim a position if it is not already taken.
-* A turn ends when a player claims a position.
-* A player wins if they make a line by claiming 3 boxes in a row, 3 positions in a column, or 3 positions in a diagonal.
-* If all positions are taken and neither player has a line, the game is a draw.
+## Technologies Used
+
+Ruby, Rspec, Rubocop (linter) and Coverall.
+
+## How to run the programme
+
+* Fork this repo
+* Open terminal
+* Require necessary files and instantiate a new game:
+
+* Make moves alternating between Player 1 and Player 2:
+
+* End with a win, draw or lose:
+
+## Test Coverage
+
+I have 100% coverage according to Coverall:
+
