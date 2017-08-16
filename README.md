@@ -21,17 +21,21 @@ Ruby, Rspec, Rubocop (linter) and Coverall.
 * Fork this repo
 * Open terminal
 * Require necessary files and instantiate a new game:
+
 ![ScreenShot](http://imgur.com/S2kGqZe.jpg)
 
 * Make moves alternating between Player 1 and Player 2:
+
 ![ScreenShot](http://imgur.com/WSJcAMl.jpg)
 
 * Win, draw or lose:
+
 ![ScreenShot](http://imgur.com/5ph80On.jpg)
 
 
 ## Test Coverage
 
 I have 100% coverage according to Coverall:
+
 ![ScreenShot](http://imgur.com/3GXnQYP.jpg)
 
