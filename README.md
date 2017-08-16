@@ -21,7 +21,7 @@ Ruby, Rspec, Rubocop (linter) and Coverall.
 * Fork this repo
 * Open terminal
 * Require necessary files and instantiate a new game:
-[Screenshot](http://imgur.com/S2kGqZe.jpg)
+![ScreenShot](http://imgur.com/S2kGqZe.jpg)
 
 * Make moves alternating between Player 1 and Player 2:
 
