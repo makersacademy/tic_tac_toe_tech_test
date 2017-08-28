@@ -1,49 +1,62 @@
 
-require_relative 'player'
-require_relative 'board'
-require_relative 'rules'
-require_relative 'parser'
-require_relative "modules/mymatrix"
-
 class Game
-  attr_reader :board, :player_one, :player_two, :rules, :parser
-  attr_accessor :current_player
 
-  def initialize(player = Player, board = Board.new, rules = Rules.new)
+  def initialize(player = Player, messages = Messages.new, board = Board.new, rules = Rules.new, parser = Parser.new)
     @board = board
+    @parser = parser
     @rules = rules
-    @player_one = player.create_one
-    @player_two = player.create_two
+    @messages = messages
+    @player_one = player.create(:X)
+    @player_two = player.create(:O)
     @current_player = player_one
-    @parser = Parser.new
+    one_whole_game
+  end
+
+  private
+
+  attr_reader :board, :parser, :rules, :messages, :player_one, :player_two, :current_player
+
+  def switch_player
+    current_player == player_one ? @current_player = player_two : @current_player = player_one
+  end
+
+  def process_choice
+    grid_index = parser.map_choice_to_grid(current_player.get_choice)
+    rules.check_valid_move(grid_index, board)
+    board.fill_at(grid_index, current_player)
+  end
+
+  def draw_proc
+    messages.draw
+    exit
+  end
+
+  def win_proc
+    messages.win
+    exit
+  end
+
+  def check_win
+    win_proc if rules.victory?(board)
+  end
+
+  def check_draw
+    draw_proc if rules.draw?(board)
+  end
+
+  def one_whole_turn
+    messages.make_choice
+    process_choice
+    board.display
+    check_draw
+    check_win
+    switch_player
   end
 
   def one_whole_game
     loop do
       one_whole_turn
     end
-  end
-
-  def switch_player
-    current_player == player_one ? current_player=(player_two) : current_player=(player_one)
-  end
-
-  def one_whole_turn
-    get_move
-    exit if game_over?
-  end
-
-  private
-
-  def get_move
-    index = parser.map_cell_to_index(current_player.pick_cell)
-    rules.check_valid_move(index, board)
-    board.fill_cell_at(index, current_player)
-  end
-
-  def game_over?
-    return if rules.victory?(board)
-    return if rules.draw?(board)
   end
 
 end

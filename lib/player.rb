@@ -1,22 +1,19 @@
 
 
 class Player
+
   attr_reader :token
 
-  def initialize(token = token)
+  def initialize(token)
     @token = token
   end
 
-  def pick_cell
-    gets.chomp
+  def get_choice(stdin = STDIN)
+    stdin.gets.downcase.chomp
   end
 
-  def self.create_one
-    Player.new("X")
-  end
-
-  def self.create_two
-    Player.new("Y")
+  def self.create(token)
+    Player.new(token)
   end
 
 end
