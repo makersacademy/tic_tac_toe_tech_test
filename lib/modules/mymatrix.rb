@@ -1,7 +1,6 @@
 
 module MyMatrix
-
-  require "matrix"
+  require 'matrix'
 
   def rotate
     Matrix[*to_a.map(&:reverse).transpose]
@@ -10,5 +9,4 @@ module MyMatrix
   def get_diagonal_of(board)
     Matrix.rows(board.grid).each(:diagonal).to_a
   end
-
 end

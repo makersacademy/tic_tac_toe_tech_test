@@ -1,11 +1,10 @@
 
 class Parser
-
   ROW_POSITION = 0
   COL_POSITION = 1
 
   def initialize
-    @grid_index = { :top => 0, :mid => 1, :low => 2, :one => 0, :two => 1, :three => 2 }
+    @grid_index = { top: 0, mid: 1, low: 2, one: 0, two: 1, three: 2 }
   end
 
   def map_choice_to_grid(choice)

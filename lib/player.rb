@@ -1,7 +1,6 @@
 
 
 class Player
-
   attr_reader :token
 
   def initialize(token)
@@ -15,5 +14,4 @@ class Player
   def self.create(token)
     Player.new(token)
   end
-
 end

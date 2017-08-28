@@ -1,6 +1,7 @@
 
-class Game
+# Understands how to
 
+class Game
   def initialize(player = Player, messages = Messages.new, board = Board.new, rules = Rules.new, parser = Parser.new)
     @board = board
     @parser = parser
@@ -58,5 +59,4 @@ class Game
       one_whole_turn
     end
   end
-
 end

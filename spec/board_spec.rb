@@ -3,7 +3,7 @@ describe Board do
   subject(:board) { described_class.new }
 
   describe '#display' do
-     it 'prints the grid to stdout' do
+    it 'prints the grid to stdout' do
       expect { board.display }.to output("| | | |\n| | | |\n| | | |\n").to_stdout
     end
   end

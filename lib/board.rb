@@ -15,5 +15,4 @@ class Board
     puts "|#{grid[1][0]}" + "|#{grid[1][1]}" + "|#{grid[1][2]}|"
     puts "|#{grid[2][0]}" + "|#{grid[2][1]}" + "|#{grid[2][2]}|"
   end
-
 end
