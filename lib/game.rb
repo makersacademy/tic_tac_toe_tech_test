@@ -1,5 +1,4 @@
-
-# Understands how to
+# Understands how to move through the big steps of tic-tac-toe.
 
 class Game
   def initialize(player = Player, messages = Messages.new, board = Board.new, rules = Rules.new, parser = Parser.new)

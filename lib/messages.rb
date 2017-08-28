@@ -1,3 +1,4 @@
+# Understands how to present messages relating to game status in tic-tac-toe
 
 class Messages
   def make_choice

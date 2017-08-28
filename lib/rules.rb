@@ -1,4 +1,4 @@
-
+#Understands how to assess patterns on a board grid
 
 class Rules
   def initialize; end

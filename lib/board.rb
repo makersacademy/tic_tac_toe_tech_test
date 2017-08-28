@@ -1,3 +1,4 @@
+# Understands how to represent a board for tic-tac-toe
 
 class Board
   attr_reader :grid
