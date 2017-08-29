@@ -57,13 +57,13 @@ describe Rules do
   describe '#victory?' do
     context 'when the same symbol marks three cells in a row' do
       let(:horizontal_win_board) do
-        double('H-win-board', grid: [%i[X O X],
+        double('H-win-board', grid: [%i[X X X],
                                      %i[O X O],
                                      %i[X O X]])
       end
 
       it 'will return true' do
-        expect(rules.victory?(horizontal_win_board))
+        expect(rules.victory?(horizontal_win_board)).to be true
       end
     end
 
@@ -75,22 +75,37 @@ describe Rules do
       end
 
       it 'will return true' do
-        expect(rules.victory?(col_win_board))
+        expect(rules.victory?(col_win_board)).to be true
       end
     end
   end
 
-  # describe "#left_diagonal_win?" do
-  #
-  #   context "when the same symbol marks a natural diagonal" do
-  #
-  #     let(:left_dia) { [[['X'], [], []],
-  #                      [[], ['X'], []],
-  #                      [[], [], ['X']]] }
-  #
-  #     it "will return true" do
-  #       p expect(rules.left_diagonal_win?(left_dia))
-  #     end
-  #
-  #   end
+    context "when the same symbol marks a natural diagonal" do
+
+      let(:left_dia_board) do
+        double('Left-dia-board', grid: [%i[X X O],
+                                     %i[X X O],
+                                     %i[O O X]])
+      end
+
+      it "will return true" do
+         expect(rules.victory?(left_dia_board)).to be true
+      end
+
+    end
+
+    context "when the same symbol marks a unnatural diagonal" do
+
+      let(:right_dia_board) do
+        double('right-dia-board', grid: [%i[X X O],
+                                     %i[X O O],
+                                     %i[O O X]])
+      end
+
+      it "will return true" do
+        expect(rules.victory?(right_dia_board)).to be true
+      end
+
+    end
+
 end

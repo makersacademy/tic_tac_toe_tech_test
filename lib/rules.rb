@@ -13,28 +13,39 @@ class Rules
   end
 
   def victory?(board)
-    return true if row_win?(board)
-    return true if col_win?(board)
-  end
-
-  # make private when sorted
-
-  def get_diagonal_of(board)
-    Matrix.rows(board).each(:diagonal).to_a
-  end
-
-  def left_diagonal_win?(board)
-    victory(get_diagonal_of(board))
+     return true if row_win?(board)
+     return true if col_win?(board)
+     return true if left_diagonal_win?(board.grid)
+     return true if right_diagonal_win?(get_rotated_clone_of(board.grid))
   end
 
   private
 
   def check_valid_cell(index, board)
-    puts "That's not a valid cell" unless board.grid[index[0]][index[1]]
+    puts "That's not a valid cell" unless board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]]
   end
 
   def check_untaken_cell(index, board)
-    puts 'That cell is already taken' if board.grid[index[0]][index[1]] == :X || board.grid[index[0]][index[1]] == :X || board.grid[index[0]][index[1]] == :O
+    puts 'That cell is already taken' if board.grid[index[0]][index[1]] == :X || board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :X || board.grid[index[0]][index[1]] == :O
+  end
+
+  def get_diagonal_of(board_grid)
+     Matrix.rows(board_grid).each(:diagonal).to_a
+  end
+
+  def get_rotated_clone_of(board_grid)
+    grid_clone = board_grid.clone
+    grid_clone[0].reverse!
+    grid_clone[2].reverse!
+    grid_clone
+  end
+
+  def left_diagonal_win?(board_grid)
+    victory(get_diagonal_of(board_grid))
+  end
+
+  def right_diagonal_win?(grid_clone)
+    victory(get_diagonal_of(grid_clone))
   end
 
   def victory(cells)

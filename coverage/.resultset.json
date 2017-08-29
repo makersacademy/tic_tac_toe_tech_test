@@ -92,7 +92,7 @@
       "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/rules_spec.rb": [
         null,
         1,
-        8,
+        10,
         null,
         3,
         1,
@@ -172,15 +172,30 @@
         null,
         null,
         null,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
         null,
+        1,
+        1,
         null,
         null,
         null,
         null,
+        1,
         null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         null,
@@ -188,6 +203,6 @@
         null
       ]
     },
-    "timestamp": 1503956456
+    "timestamp": 1504003103
   }
 }
