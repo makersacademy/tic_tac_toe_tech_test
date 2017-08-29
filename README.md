@@ -27,6 +27,7 @@ Run the following commands:
 $ git clone git@github.com:jkingharman/tic_tac_toe_tech_test.git
 $ cd tic_tac_toe_tech_test
 $ bundle
+$ cd lib
 $ irb
 $ require_relative ‘play’
 ```
@@ -55,3 +56,4 @@ mid two
 | |O| |
 | | | |
 Pick a cell
+```
