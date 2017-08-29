@@ -11,7 +11,6 @@ describe Board do
   describe '#fill_at' do
     let(:index) { [0, 0] }
     let(:player) { double(:Player, token: 'X') }
-
     it "will insert the player's token into the specified cell" do
       board.fill_at(index, player)
       expect(board.grid[0][0]).to eq(player.token)

@@ -5,7 +5,6 @@ require_relative '../lib/player'
 require_relative '../lib/rules'
 require_relative '../lib/parser'
 require_relative '../lib/messages'
-require_relative '../lib/modules/mymatrix'
 
 require 'simplecov'
 SimpleCov.start

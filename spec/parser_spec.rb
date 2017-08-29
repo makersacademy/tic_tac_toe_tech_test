@@ -1,5 +1,6 @@
 
 describe Parser do
+
   subject(:parser) { described_class.new }
 
   describe '#map_cell_to_index' do

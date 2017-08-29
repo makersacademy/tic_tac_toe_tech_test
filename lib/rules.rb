@@ -1,6 +1,8 @@
 #Understands how to assess patterns on a board grid
+require 'matrix'
 
 class Rules
+
   def initialize; end
 
   def check_valid_move(grid_index, board)
@@ -16,7 +18,7 @@ class Rules
      return true if row_win?(board)
      return true if col_win?(board)
      return true if left_diagonal_win?(board.grid)
-     return true if right_diagonal_win?(get_rotated_clone_of(board.grid))
+     return true if right_diagonal_win?(get_rotated_grid_of(board))
   end
 
   private
@@ -26,18 +28,18 @@ class Rules
   end
 
   def check_untaken_cell(index, board)
-    puts 'That cell is already taken' if board.grid[index[0]][index[1]] == :X || board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :X || board.grid[index[0]][index[1]] == :O
+    puts 'That cell is already taken' if board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :X || board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :O
   end
 
   def get_diagonal_of(board_grid)
      Matrix.rows(board_grid).each(:diagonal).to_a
   end
 
-  def get_rotated_clone_of(board_grid)
-    grid_clone = board_grid.clone
-    grid_clone[0].reverse!
-    grid_clone[2].reverse!
-    grid_clone
+  def get_rotated_grid_of(board)
+    board_clone = Marshal.load(Marshal.dump(board))
+    board_clone.grid[0].reverse!
+    board_clone.grid[2].reverse!
+    board_clone.grid
   end
 
   def left_diagonal_win?(board_grid)
