@@ -1,6 +1,5 @@
 
 describe Rules do
-
   subject(:rules) { described_class.new }
   let(:valid_position) { [0, 0] }
   let(:board) do
@@ -71,14 +70,14 @@ describe Rules do
       end
     end
   end
-    context "when the same symbol marks a natural diagonal" do
-      let(:left_dia_board) do
-        double('Left-dia-board', grid: [%i[X X O],
-                                     %i[X X O],
-                                     %i[O O X]])
-      end
-      it "will return true" do
-         expect(rules.victory?(left_dia_board)).to be true
-      end
+  context 'when the same symbol marks a natural diagonal' do
+    let(:left_dia_board) do
+      double('Left-dia-board', grid: [%i[X X O],
+                                      %i[X X O],
+                                      %i[O O X]])
     end
+    it 'will return true' do
+      expect(rules.victory?(left_dia_board)).to be true
+    end
+  end
 end

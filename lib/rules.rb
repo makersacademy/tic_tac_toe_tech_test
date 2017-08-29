@@ -1,8 +1,7 @@
-#Understands how to assess patterns on a board grid
+# Understands how to assess patterns on a board grid
 require 'matrix'
 
 class Rules
-
   def initialize; end
 
   def check_valid_move(grid_index, board)
@@ -15,10 +14,10 @@ class Rules
   end
 
   def victory?(board)
-     return true if row_win?(board)
-     return true if col_win?(board)
-     return true if left_diagonal_win?(board.grid)
-     return true if right_diagonal_win?(get_rotated_grid_of(board))
+    return true if row_win?(board)
+    return true if col_win?(board)
+    return true if left_diagonal_win?(board.grid)
+    return true if right_diagonal_win?(get_rotated_grid_of(board))
   end
 
   private
@@ -32,7 +31,7 @@ class Rules
   end
 
   def get_diagonal_of(board_grid)
-     Matrix.rows(board_grid).each(:diagonal).to_a
+    Matrix.rows(board_grid).each(:diagonal).to_a
   end
 
   def get_rotated_grid_of(board)

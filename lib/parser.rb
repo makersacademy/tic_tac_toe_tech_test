@@ -1,4 +1,4 @@
-#Understands how to parse natural language positions into formal ones
+# Understands how to parse natural language positions into formal ones
 
 class Parser
   ROW_POSITION = 0
