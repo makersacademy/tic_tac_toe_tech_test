@@ -1,6 +1,6 @@
-# Understands how to parse natural language positions into formal ones
+#  understands how to convert a natural statement of a board position into a formal one.
 
-class Parser
+class PositionParser
   ROW_POSITION = 0
   COL_POSITION = 1
 

@@ -1,4 +1,4 @@
-# Understands how to grab user-input from player
+# Understands how to get user-input from the player
 
 class Player
   attr_reader :token

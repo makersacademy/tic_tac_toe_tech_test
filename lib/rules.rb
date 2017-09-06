@@ -1,4 +1,5 @@
-# Understands how to assess patterns on a board grid
+# Understands how to apply the rules of tic-tac-toe to a 9x9 grid
+
 require 'matrix'
 
 class Rules
@@ -23,11 +24,11 @@ class Rules
   private
 
   def check_valid_cell(index, board)
-    puts "That's not a valid cell" unless board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]]
+    puts "That's not a valid cell" unless board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]]
   end
 
   def check_untaken_cell(index, board)
-    puts 'That cell is already taken' if board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :X || board.grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] == :O
+    puts 'That cell is already taken' if board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] == :X || board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] == :O
   end
 
   def get_diagonal_of(board_grid)
@@ -51,7 +52,7 @@ class Rules
 
   def victory(cells)
     cells == %i[X X X] || cells == %i[O O O]
- end
+  end
 
   def row_win?(board)
     board.grid.any? { |row| victory(row) }

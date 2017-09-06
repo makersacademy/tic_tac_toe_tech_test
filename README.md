@@ -57,3 +57,49 @@ mid two
 | | | |
 Pick a cell
 ```
+
+## My Approach ##
+
+I took a domain-driven approach to this tech test and worked outside-in. My first step therefore was to breakdown the acceptance spec into some user stories:
+
+```
+As a user,
+So that there is competition,
+I want the game to be two player.
+
+As a user,
+So that the game is fair,
+I want to alternate goes with my opponent
+
+As a user,
+So that I can make a move,
+I want to pick a position via the CL
+
+As a user,
+So that the game is fair,
+I want to be stopped from taking a occupied square
+
+As a user,
+So that I know how I’m doing,
+I want the board to be printed between goes
+
+As a user,
+So that I can win,
+I want tic-tac-toe’s win conditions to apply
+
+As a user,
+So that I know outcome of the game,
+I want to be presented with that news at game’s end
+```
+
+## Domain Modeling ##
+
+From these user stories, I then took steps towards building my first conceptual model of the app. The goal was to pinpoint the main units in the domain and their responsibilities:
+
+*Game -  
+
+
+
+## Challenges ##
+
+*Win conditions - I was stuck trying to evaluate the top-right to bottom-left diagonal cells for a win. My solution: clone the board, mutate it so that tricky diagonal becomes a top-left to bottom-right diagonal, then call my existing diagonal check method. If I had more time I would definitely search for a less expensive solution here.

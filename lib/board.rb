@@ -1,4 +1,4 @@
-# Understands how to represent a board for tic-tac-toe
+# Understands how to represent the configuration of player’s moves
 
 class Board
   attr_reader :grid
@@ -8,7 +8,7 @@ class Board
   end
 
   def fill_at(index, player)
-    grid[index[Parser::ROW_POSITION]][index[Parser::COL_POSITION]] = player.token
+    grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] = player.token
   end
 
   def display
