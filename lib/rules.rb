@@ -1,4 +1,4 @@
-# Understands how to apply the rules of tic-tac-toe to a 9x9 grid
+# Understands how to apply the rules of tic-tac-toe to a grid
 
 require 'matrix'
 

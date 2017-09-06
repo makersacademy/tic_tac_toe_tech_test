@@ -96,10 +96,12 @@ I want to be presented with that news at game’s end
 
 From these user stories, I then took steps towards building my first conceptual model of the app. The goal was to pinpoint the main units in the domain and their responsibilities:
 
-*Game -  
-
-
+* Game - Understands how to play one whole game of tic-tac-toe
+* Board - Understands how to represent the configuration of player’s moves
+* Rules - Understands how to how to apply the rules of tic-tac-toe to a grid
+* Player - Understands how to get user-input from the player
+* Position Parser - Understands how to convert a natural statement of a board position into a formal one.
 
 ## Challenges ##
 
-*Win conditions - I was stuck trying to evaluate the top-right to bottom-left diagonal cells for a win. My solution: clone the board, mutate it so that tricky diagonal becomes a top-left to bottom-right diagonal, then call my existing diagonal check method. If I had more time I would definitely search for a less expensive solution here.
+* Win conditions - I was stuck trying to evaluate the top-right-to-bottom-left- diagonal cells for a win. My solution: clone the board, mutate it so that tricky diagonal becomes a top-left-to-bottom-right diagonal, then call my existing diagonal check method. With more time, I'll definitely search for a less expensive solution here.
