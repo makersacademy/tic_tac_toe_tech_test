@@ -96,12 +96,12 @@ I want to be presented with that news at game’s end
 
 From these user stories, I then took steps towards building my first conceptual model of the app. The goal was to pinpoint the main units in the domain and their responsibilities:
 
-* Game - Understands how to play one whole game of tic-tac-toe
-* Board - Understands how to represent the configuration of player’s moves
-* Rules - Understands how to how to apply the rules of tic-tac-toe to a grid
-* Player - Understands how to get user-input from the player
-* Position Parser - Understands how to convert a natural statement of a board position into a formal one.
+* __Game__ - Understands how to play one whole game of tic-tac-toe
+* __Board__ - Understands how to represent the configuration of player’s moves
+* __Rules__ - Understands how to how to apply the rules of tic-tac-toe to a grid
+* __Player__ - Understands how to get user-input from the player
+* __Position Parser__ - Understands how to convert a natural statement of a board position into a formal one.
 
 ## Challenges ##
 
-* Win conditions - I was stuck trying to evaluate the anti-diagonal. My solution: clone the board, mutate it so that anti-diagonal becomes a leading-diagonal, then call my existing diagonal check method. With more time, I'd definitely search for a less expensive solution.
+* __Win conditions__ - I was stuck trying to evaluate the anti-diagonal. My solution: clone the board, mutate it so that anti-diagonal becomes a leading-diagonal, then call my existing diagonal check method. With more time, I'd definitely search for a less expensive solution.
