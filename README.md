@@ -104,4 +104,4 @@ From these user stories, I then took steps towards building my first conceptual 
 
 ## Challenges ##
 
-* Win conditions - I was stuck trying to evaluate the top-right-to-bottom-left- diagonal cells for a win. My solution: clone the board, mutate it so that tricky diagonal becomes a top-left-to-bottom-right diagonal, then call my existing diagonal check method. With more time, I'll definitely search for a less expensive solution here.
+* Win conditions - I was stuck trying to evaluate the anti-diagonal. My solution: clone the board, mutate it so that anti-diagonal becomes a leading-diagonal, then call my existing diagonal check method. With more time, I'd definitely search for a less expensive solution.
