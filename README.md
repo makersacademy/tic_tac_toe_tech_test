@@ -164,4 +164,4 @@ From these user stories, I then took steps towards building my first conceptual 
 
 ## TODOs ##
 
-My time was limited when working on this tech test. With more time, my priority would be to find a better architecture for the app. I'd extract with the aim of following some of Sandi Metz's advice [here](https://www.youtube.com/watch?v=8bZh5LMaSmE).
+My priority is to better architect the app. I'd extract with the aim of applying Sandi Metz's advice [here](https://www.youtube.com/watch?v=8bZh5LMaSmE).
