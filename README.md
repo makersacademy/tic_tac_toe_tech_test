@@ -106,4 +106,4 @@ From these user stories, I then took steps towards building my first conceptual 
 
 * __Win conditions__ - I was stuck trying to evaluate the anti-diagonal. My solution: clone the board, mutate it so that anti-diagonal becomes a leading-diagonal, then call my existing diagonal check method. With more time, I'd definitely search for a less expensive solution.
 
-* __Unit boundaries__ - Some units do too much. For instance, ‘Board’ properly updates a 2d array, which tracks player’s moves. But currently it also prints this array to stdout, a presentation concerns belonging elsewhere. ‘Game’ is another imperfectly defined unit. It passes the player objects tokens, for example, though really token generation should be internal to those objects.
+* __Unit boundaries__ - Some units do too much. For instance, ‘Board’ properly updates a 2d array, which tracks player’s moves. But currently it also prints this array to stdout, a presentation concern belonging elsewhere. ‘Game’ is another imperfectly defined unit. It passes the player objects tokens, for example, though really token generation should be internal to those objects.
