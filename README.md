@@ -58,6 +58,60 @@ mid two
 Pick a cell
 ```
 
+## Testing Coverage ##
+
+```
+JKHs-MacBook-Pro:tic_tac_toe_tech_test jkh$ rspec -fd
+
+Board
+  #display
+    prints the grid to stdout
+  #fill_at
+    will insert the player's token into the specified cell
+
+Messages
+  #make_choice
+    will print a string asking for a cell
+  #draw
+    will print a string declaring draw
+  #win
+    will print a string declaring victory
+
+Player
+  attributes
+    will have X for a token
+
+PositionParser
+  #map_cell_to_index
+    returns the index of the user's cell choice
+
+Rules
+  #check_valid_move
+    when user input maps to an untaken grid cell
+      will return nil
+    when user input doesn't map to a valid grid cell
+      will say so
+    when user input maps to a valid but taken grid cell
+      will raise an error saying so
+  #draw?
+    when every cell on the board is taken
+      will return true
+    when board has at least one empty cell
+      will return false
+  #victory?
+    when the same symbol marks three cells in a row
+      will return true
+    when the same symbol marks three cells in one col
+      will return true
+  when the same symbol marks a natural diagonal
+    will return true
+
+Finished in 0.01027 seconds (files took 0.16641 seconds to load)
+15 examples, 0 failures
+
+Coverage report generated for RSpec to /Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/coverage. 77 / 77 LOC (100.0%) covered.
+```
+
 ## My Approach ##
 
 I took a domain-driven approach to this tech test and worked outside-in. My first step therefore was to breakdown the acceptance spec into some user stories:
@@ -107,3 +161,7 @@ From these user stories, I then took steps towards building my first conceptual 
 * __Win conditions__ - I was stuck trying to evaluate the anti-diagonal. My solution: clone the board, mutate it so that anti-diagonal becomes a leading-diagonal, then call my existing diagonal check method. With more time, I'd definitely search for a less expensive solution.
 
 * __Unit boundaries__ - Some units do too much. For instance, ‘Board’ properly updates a 2d array, which tracks player’s moves. But currently it also prints this array to stdout, a presentation concern belonging elsewhere. ‘Game’ is another imperfectly defined unit. It passes the player objects tokens, for example, though really token generation should be internal to those objects.
+
+## TODOs ##
+
+My time was limited when working on this tech test. With more time, my priority would be to find a better architecture for the app. I'd extract with the aim of following some of Sandi Metz's advice [here](https://www.youtube.com/watch?v=8bZh5LMaSmE).

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/board_spec.rb": [
+      "/Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/spec/board_spec.rb": [
         null,
         1,
         3,
@@ -22,7 +22,7 @@
         null,
         null
       ],
-      "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/messages_spec.rb": [
+      "/Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/spec/messages_spec.rb": [
         null,
         1,
         4,
@@ -44,21 +44,7 @@
         null,
         null
       ],
-      "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/parser_spec.rb": [
-        null,
-        1,
-        null,
-        2,
-        null,
-        1,
-        2,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/player_spec.rb": [
+      "/Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/spec/player_spec.rb": [
         null,
         1,
         2,
@@ -71,10 +57,22 @@
         null,
         null
       ],
-      "/Users/jkh/Desktop/Projects/tic_tac_toe_tech_test/spec/rules_spec.rb": [
+      "/Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/spec/position_parser_spec.rb": [
         null,
         1,
+        2,
         null,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jkh/Desktop/Projects_Two/tic_tac_toe_tech_test/spec/rules_spec.rb": [
+        null,
+        1,
         9,
         3,
         1,
@@ -158,6 +156,6 @@
         null
       ]
     },
-    "timestamp": 1504016077
+    "timestamp": 1504780117
   }
 }
