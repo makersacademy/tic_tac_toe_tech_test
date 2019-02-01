@@ -1,8 +1,8 @@
-#  understands how to convert a natural statement of a board position into a formal one.
+# Understands how to make a natural statement of a board position formal
 
 class PositionParser
-  ROW_POSITION = 0
-  COL_POSITION = 1
+  ROW = 0
+  COL = 1
 
   def initialize
     @grid_index = { top: 0, mid: 1, low: 2, one: 0, two: 1, three: 2 }
@@ -19,11 +19,11 @@ class PositionParser
   attr_reader :grid_index
 
   def get_row_from(choice)
-    choice.strip.split(' ')[ROW_POSITION].to_sym
+    choice.strip.split(' ')[ROW].to_sym
   end
 
   def get_col_from(choice)
-    choice.strip.split(' ')[COL_POSITION].to_sym
+    choice.strip.split(' ')[COL].to_sym
   end
 
   def get_grid_index(choice)

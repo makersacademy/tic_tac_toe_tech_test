@@ -1,7 +1,12 @@
-# Understands how to play one whole game of tic-tac-toe 
+# Understands how to play one whole game of tic-tac-toe
 
 class Game
-  def initialize(player = Player, messages = Messages.new, board = Board.new, rules = Rules.new, parser = PositionParser.new)
+  def initialize(
+    player = Player,
+    messages = Messages.new,
+    board = Board.new, rules = Rules.new,
+    parser = PositionParser.new
+  )
     @board = board
     @parser = parser
     @rules = rules
@@ -14,10 +19,15 @@ class Game
 
   private
 
-  attr_reader :board, :parser, :rules, :messages, :player_one, :player_two, :current_player
+  attr_reader :board, :parser, :rules, :messages, :player_one, :player_two,
+              :current_player
 
   def switch_player
-    current_player == player_one ? @current_player = player_two : @current_player = player_one
+    @current_player = if current_player == player_one
+                        player_two
+                      else
+                        player_one
+                      end
   end
 
   def process_choice

@@ -5,9 +5,9 @@ require 'matrix'
 class Rules
   def initialize; end
 
-  def check_valid_move(grid_index, board)
-    check_valid_cell(grid_index, board)
-    check_untaken_cell(grid_index, board)
+  def check_valid_move(i, board)
+    check_valid_cell(i, board)
+    check_untaken_cell(i, board)
   end
 
   def draw?(board)
@@ -23,12 +23,17 @@ class Rules
 
   private
 
-  def check_valid_cell(index, board)
-    puts "That's not a valid cell" unless board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]]
+  def check_valid_cell(i, board)
+    unless board.grid[i[PositionParser::ROW]][i[PositionParser::COL]]
+      puts "That's not a valid cell"
+    end
   end
 
-  def check_untaken_cell(index, board)
-    puts 'That cell is already taken' if board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] == :X || board.grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] == :O
+  def check_untaken_cell(i, board)
+    if board.grid[i[PositionParser::ROW]][i[PositionParser::COL]] == :X ||
+       board.grid[i[PositionParser::ROW]][i[PositionParser::COL]] == :O
+      puts 'That cell is already taken'
+    end
   end
 
   def get_diagonal_of(board_grid)

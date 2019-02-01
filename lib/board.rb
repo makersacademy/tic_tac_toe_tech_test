@@ -1,4 +1,4 @@
-# Understands how to represent the configuration of player’s moves
+# Understands how to represent the configuration of player moves
 
 class Board
   attr_reader :grid
@@ -7,8 +7,8 @@ class Board
     @grid = Array.new(3) { Array.new(3) { :" " } }
   end
 
-  def fill_at(index, player)
-    grid[index[PositionParser::ROW_POSITION]][index[PositionParser::COL_POSITION]] = player.token
+  def fill_at(i, player)
+    grid[i[PositionParser::ROW]][i[PositionParser::COL]] = player.token
   end
 
   def display
