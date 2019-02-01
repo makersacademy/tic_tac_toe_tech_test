@@ -4,7 +4,9 @@ describe Board do
 
   describe '#display' do
     it 'prints the grid to stdout' do
-      expect { board.display }.to output("| | | |\n| | | |\n| | | |\n").to_stdout
+      expect { board.display }.to output(
+        "| | | |\n| | | |\n| | | |\n"
+      ).to_stdout
     end
   end
 

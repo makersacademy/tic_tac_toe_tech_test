@@ -17,7 +17,9 @@ describe Rules do
     context "when user input doesn't map to a valid grid cell" do
       let(:invalid_position) { [1, 5] }
       it 'will say so' do
-        expect { rules.check_valid_move(invalid_position, board) }.to output("That's not a valid cell\n").to_stdout
+        expect { rules.check_valid_move(invalid_position, board) }.to output(
+          "That's not a valid cell\n"
+        ).to_stdout
       end
     end
     context 'when user input maps to a valid but taken grid cell' do
@@ -25,7 +27,9 @@ describe Rules do
         board.grid[0][0] = :X
       end
       it 'will raise an error saying so' do
-        expect { rules.check_valid_move(valid_position, board) }.to output("That cell is already taken\n").to_stdout
+        expect { rules.check_valid_move(valid_position, board) }.to output(
+          "That cell is already taken\n"
+        ).to_stdout
       end
     end
   end

@@ -9,7 +9,9 @@ describe Messages do
   end
   describe '#draw' do
     it 'will print a string declaring draw' do
-      expect { messages.draw }.to output("The game is a draw! Why not play again?\n").to_stdout
+      expect { messages.draw }.to output(
+        "The game is a draw! Why not play again?\n"
+      ).to_stdout
     end
   end
   describe '#win' do
