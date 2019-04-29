@@ -1,25 +1,44 @@
-# Tic-Tac-Toe tech test
+# Tic-Tac-Toe
 
-## Requirements
+A CLI version of tic-tac-toe :)
 
-* Your goal is to write a program that lets two humans play Tic-Tac-Toe against each other.
-* Implement a command line interface that lets the humans play the game by typing commands into the terminal.
-* Players should be able to input their moves.
-* The board should be shown after each move.
-* The game should announce the result of the game when it's over.
+## What's it do? ##
 
-### Rules of Tic-Tac-Toe
+* Players can input moves on the CL.
+* Players can take free squares only.
+* The board is shown after each move.
+* A win or draw will be determined.
+* The game's outcome will be shown.
+
+## How do I get started? ##
+
+Checkout the code, launch a ruby REPL (IRB e.g), then ```require_relative "play"```.
+You can run the tests if you want with ```rspec```.
+
+## IRB Example ##
 
 ```
-O X X
-X X O
-O X O
+JKHs-MBP:lib jkh$ irb
+2.3.3 :001 > require_relative "play"
+Pick a cell
+top one
+|X| | |
+| | | |
+| | | |
+Pick a cell
+mid two
+|X| | |
+| |O| |
+| | | |
+Pick a cell
+low three
+|X| | |
+| |O| |
+| | |X|
 ```
 
-* There are two players in the game (X and O).
-* The board is 9 positions in a 3x3 grid.
-* Players take turns until the game is over.
-* A player can claim a position if it is not already taken.
-* A turn ends when a player claims a position.
-* A player wins if they make a line by claiming 3 boxes in a row, 3 positions in a column, or 3 positions in a diagonal.
-* If all positions are taken and neither player has a line, the game is a draw.
+## Any Challenges? ##
+* __Unit boundaries__ - Some units do too much. For instance, ‘Board’ properly updates a 2d array, which tracks players' moves. But currently it also prints this array to stdout, a presentation concern belonging elsewhere. ‘Game’ is another example. It passes the player objects tokens though really token generation should be internal to those objects.
+
+## Todos ##
+The game doesn't handle invalid player input currently. This'll be the first thing I add with time.
